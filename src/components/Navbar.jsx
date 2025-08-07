@@ -1,20 +1,38 @@
 import React from "react";
-import { FaLinkedinIn, FaYoutube, FaTwitter } from "react-icons/fa"; // Changed FaLinkedin to FaLinkedinIn for better match
+import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+
+const navItems = [
+  { name: "Home", subItems: [] },
+  {
+    name: "About Us",
+    subItems: [
+      "Cluster Formation",
+      "Cluster Launch",
+      "Section 8 Company Formation",
+    ],
+  },
+  { name: "Gallery", subItems: [] },
+  {
+    name: "People",
+    subItems: ["Coordinators", "Team Members"],
+  },
+  { name: "Verticals", subItems: [] },
+  { name: "Opportunities", subItems: [] },
+  { name: "Resources", subItems: [] },
+  { name: "Contact Us", subItems: [] },
+];
 
 const Navbar = () => {
   return (
-    <header className="w-full font-inter"> {/* Applying the Inter font */}
+    <header className="w-full font-inter">
       {/* Top Header with Logos */}
-      <div className="bg-light-gray-bg py-4"> {/* Using custom light-gray-bg color */}
+      <div className="bg-light-gray-bg py-4">
         <div className="max-w-screen-xl mx-auto flex items-center justify-between px-8">
-          {/* Left Logo */}
           <img
             src="https://www.bestkc.in/wp-content/uploads/2025/05/Science-and-Technology-Cluster-1.jpg"
             alt="Office of the Principal Scientific Adviser to the Government of India"
             className="h-20"
           />
-
-          {/* Right Logo */}
           <img
             src="https://www.bestkc.in/wp-content/uploads/2024/07/best-logo.png"
             alt="BeST Cluster Logo"
@@ -24,27 +42,18 @@ const Navbar = () => {
       </div>
 
       {/* Main Navigation */}
-      <nav className="bg-primary text-white"> {/* Using custom primary color */}
+      <nav className="bg-primary text-white">
         <div className="max-w-screen-xl mx-auto flex items-center justify-between px-8 h-16">
-          {/* Main Navigation Links */}
+          {/* Links */}
           <ul className="flex items-center space-x-8">
-            {[
-              "Home",
-              "About Us",
-              "People",
-              "Thematic Areas",
-              "Opportunities",
-              "Resources",
-              "Contact Us",
-            ].map((item) => (
-              <li key={item} className="relative group">
+            {navItems.map((item) => (
+              <li key={item.name} className="relative group">
                 <a
                   href="#"
                   className="uppercase text-white tracking-widest text-sm hover:text-gray-300 flex items-center transition-colors"
                 >
-                  {item}
-                  {/* Dropdown arrow for items other than Home and Contact Us */}
-                  {item !== "Home" && item !== "Contact Us" && (
+                  {item.name}
+                  {item.subItems.length > 0 && (
                     <svg
                       className="ml-1 h-3 w-3 transform group-hover:rotate-180 transition-transform duration-200"
                       fill="currentColor"
@@ -58,46 +67,20 @@ const Navbar = () => {
                     </svg>
                   )}
                 </a>
-                {/* Dropdown content */}
-                {item !== "Home" && item !== "Contact Us" && (
-                  <ul className="absolute left-0 top-full mt-0 w-44 rounded-sm bg-primary-dark text-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 uppercase text-sm hover:bg-primary-light transition-colors"
-                      >
-                        {item} 1
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 uppercase text-sm hover:bg-primary-light transition-colors"
-                      >
-                        {item} 2
-                      </a>
-                    </li>
-                    {/* Additional dropdown items for "Thematic Areas" to match the image */}
-                    {item === "Thematic Areas" && (
-                      <>
-                        <li>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 uppercase text-sm hover:bg-primary-light transition-colors"
-                          >
-                            Funded Projects
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="#"
-                            className="block px-4 py-2 uppercase text-sm hover:bg-primary-light transition-colors"
-                          >
-                            Collaborations
-                          </a>
-                        </li>
-                      </>
-                    )}
+
+                {/* Dropdown */}
+                {item.subItems.length > 0 && (
+                  <ul className="absolute left-0 top-full mt-0 w-56 rounded-sm bg-primary-dark text-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    {item.subItems.map((sub) => (
+                      <li key={sub}>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 uppercase text-sm hover:bg-primary-light transition-colors"
+                        >
+                          {sub}
+                        </a>
+                      </li>
+                    ))}
                   </ul>
                 )}
               </li>
@@ -110,7 +93,7 @@ const Navbar = () => {
               href="https://www.linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-[#0077b5] text-white border border-white" // LinkedIn blue
+              className="p-2 bg-[#0077b5] text-white border border-white"
             >
               <FaLinkedinIn size={20} />
             </a>
@@ -118,7 +101,7 @@ const Navbar = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-[#000000] text-white border border-white" // Black for X (Twitter)
+              className="p-2 bg-black text-white border border-white"
             >
               <FaTwitter size={20} />
             </a>
@@ -126,7 +109,7 @@ const Navbar = () => {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 bg-[#ff0000] text-white border border-white" // YouTube red
+              className="p-2 bg-[#ff0000] text-white border border-white"
             >
               <FaYoutube size={20} />
             </a>
