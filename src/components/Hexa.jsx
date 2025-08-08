@@ -1,5 +1,5 @@
 import React from "react";
-
+import imgg from "../assets/imgg.jpg"
 const Hexa = () => {
   return (
     <div className="bg-white py-20">
@@ -10,7 +10,7 @@ const Hexa = () => {
           </h2>
           <div className="w-full flex justify-center">
             <img
-              src="/imgg.jpg"
+              src={imgg}
               alt="NEST Hub and Spoke Model"
               className="w-full object-cover"
             />
