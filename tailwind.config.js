@@ -8,7 +8,7 @@ module.exports = {
         primary: '#002f5e', // Dark blue for the main navigation bar
         'primary-dark': '#00264b', // Slightly darker blue for dropdown background
         'primary-light': '#003a74', // Lighter blue for dropdown item hover
-        accent: '#fbbd0a', // Yellowish color for social media icons (as seen in image)
+        accent: '#f0f2f5', // Yellowish color for social media icons (as seen in image)
         'light-gray-bg': '#f0f2f5', // Very light grey for the top header background
       },
       fontFamily: {
