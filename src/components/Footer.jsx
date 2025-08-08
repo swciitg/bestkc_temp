@@ -7,15 +7,15 @@ const Footer = () => {
       <div className="bg-[#00899e] py-10">
         <div className="max-w-screen-xl mx-auto px-8 space-y-2 text-sm md:text-base leading-relaxed">
           <p>Section 8 Company</p>
-          <p>Foundation for Bengaluru Science and Technology</p>
-          <p>Indian Institute of Science, Malleshwaram,</p>
-          <p>Bengaluru – 560012, Karnataka</p>
+          {/* <p>Foundation for Bengaluru Science and Technology</p> */}
+          <p>Indian Institute of Technology, Guwahati,</p>
+          <p>Guwahati – 781039, Assam, India</p>
           <p>Phone: 080 22933537</p>
-          <p>CIN : U72100KA2024NPL188452</p>
+          {/* <p>CIN : U72100KA2024NPL188452</p> */}
 
           <hr className="border-t border-white/50 my-6" />
 
-          <p>copyright@BeSTCluster2025</p>
+          <p>copyright@NESTCluster2025</p>
         </div>
       </div>
 
