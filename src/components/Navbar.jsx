@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { Link } from "react-router-dom";
-
+import image from "../assets/image.png"
 const navItems = [
   { name: "Home", link: "/", subItems: [] },
   {
@@ -54,7 +54,7 @@ const Navbar = () => {
                 Funded by
               </p>
               <img
-                src="/image.png"
+                src={image}
                 alt="Ministry of Development of North Eastern Region"
                 className="mx-auto mt-2 h-8 sm:h-10 md:h-12 object-contain"
               />
