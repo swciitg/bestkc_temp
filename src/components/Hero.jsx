@@ -44,82 +44,161 @@ const slides = [
 const EnhancedCarousel = () => {
   const containerRef = useRef(null);
   const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState(null);
   const slideCount = slides.length;
 
-  // Scroll to a specific slide
+  // Utility: scroll to a specific slide
   const scrollTo = (index) => {
-    const width = containerRef.current.offsetWidth;
+    if (!containerRef.current) return;
+    const width = containerRef.current.clientWidth; // clientWidth is safer than offsetWidth
     containerRef.current.scrollTo({ left: width * index, behavior: 'smooth' });
     setCurrent(index);
   };
 
+  // Prev / Next
   const prev = () => scrollTo((current - 1 + slideCount) % slideCount);
   const next = () => scrollTo((current + 1) % slideCount);
 
-  // Auto-play every 5s
+  // Autoplay (pauses on hover or when user prefers reduced motion)
   useEffect(() => {
-    const timer = setInterval(() => next(), 5000);
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (paused || prefersReduced) return;
+
+    const timer = setInterval(() => {
+      next();
+    }, 5000);
+
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, paused]);
+
+  // Keep slide aligned on resize (ResizeObserver works best)
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const ro = new ResizeObserver(() => {
+      scrollTo(current);
+    });
+    ro.observe(containerRef.current);
+    return () => ro.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [current]);
 
-  // Re-scroll on resize
+  // Keyboard navigation
   useEffect(() => {
-    const onResize = () => scrollTo(current);
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, [current]);
+    const onKey = (e) => {
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  });
+
+  // Touch / swipe support
+  const onTouchStart = (e) => setTouchStartX(e.touches[0].clientX);
+  const onTouchEnd = (e) => {
+    if (touchStartX == null) return;
+    const diff = e.changedTouches[0].clientX - touchStartX;
+    const threshold = 50; // px
+    if (diff > threshold) prev();
+    if (diff < -threshold) next();
+    setTouchStartX(null);
+  };
 
   return (
-    <div className="relative w-full overflow-hidden group">
+    <div
+      className="relative w-full overflow-hidden group"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       {/* Slides */}
       <div
         ref={containerRef}
-        className="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory h-96 md:h-[500px]"
+        className="
+          flex overflow-x-hidden scroll-smooth snap-x snap-mandatory
+          h-[48vh] min-h-[280px] md:h-[56vh] lg:h-[64vh] xl:h-[68vh]
+        "
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        aria-roledescription="carousel"
+        aria-live="polite"
       >
         {slides.map(({ id, heading, text, bgColor }, idx) => (
-          <div
+          <section
             key={id}
             className={`relative min-w-full snap-center flex-shrink-0 ${bgColor}`}
+            role="group"
+            aria-label={`Slide ${idx + 1} of ${slideCount}`}
           >
-            {/* Dark overlay */}
-            <div className="absolute inset-0 opacity-25 bg-black" />
+            {/* Dark overlay for legibility */}
+            <div className="absolute inset-0 bg-black/25" />
 
             {/* Content panel */}
-            <div className="relative max-w-2xl mx-auto h-full flex flex-col justify-center px-6">
-              <h3 className="text-3xl md:text-4xl font-semibold text-white mb-4">
+            <div
+              className="
+                relative h-full max-w-5xl
+                mx-auto px-4 sm:px-6 lg:px-10
+                flex flex-col justify-center
+                text-white
+              "
+            >
+              <h3
+                className="
+                  font-semibold leading-snug mb-3
+                  text-[clamp(20px,4.5vw,42px)]
+                "
+              >
                 {heading}
               </h3>
-              <p className="text-lg text-white/90 leading-relaxed">
+              <p className="text-white/90 leading-relaxed text-[clamp(14px,2.2vw,18px)] max-w-3xl">
                 {text}
               </p>
             </div>
-          </div>
+          </section>
         ))}
       </div>
 
       {/* Arrows */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/50 hover:bg-white/70 p-3 rounded-full text-gray-800 z-10 transition"
+        aria-label="Previous slide"
+        className="
+          absolute left-3 sm:left-4 top-1/2 -translate-y-1/2
+          bg-white/60 hover:bg-white/80 text-gray-800
+          p-2 sm:p-3 rounded-full z-10 transition
+          focus:outline-none focus:ring-2 focus:ring-white/80
+        "
       >
-        <FaChevronLeft size={20} />
+        <FaChevronLeft size={18} className="sm:hidden" />
+        <FaChevronLeft size={20} className="hidden sm:block" />
       </button>
+
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/50 hover:bg-white/70 p-3 rounded-full text-gray-800 z-10 transition"
+        aria-label="Next slide"
+        className="
+          absolute right-3 sm:right-4 top-1/2 -translate-y-1/2
+          bg-white/60 hover:bg-white/80 text-gray-800
+          p-2 sm:p-3 rounded-full z-10 transition
+          focus:outline-none focus:ring-2 focus:ring-white/80
+        "
       >
-        <FaChevronRight size={20} />
+        <FaChevronRight size={18} className="sm:hidden" />
+        <FaChevronRight size={20} className="hidden sm:block" />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-4 inset-x-0 flex justify-center space-x-2">
+      <div className="absolute bottom-3 sm:bottom-4 inset-x-0 flex justify-center space-x-2 sm:space-x-3">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => scrollTo(idx)}
-            className={`w-3 h-3 rounded-full ${
-              current === idx ? 'bg-white' : 'bg-white/50'
-            } transition`}
+            aria-label={`Go to slide ${idx + 1}`}
+            className={`
+              transition
+              rounded-full
+              ${current === idx ? 'bg-white w-3 h-3 sm:w-3.5 sm:h-3.5' : 'bg-white/60 w-2.5 h-2.5 sm:w-3 sm:h-3'}
+            `}
           />
         ))}
       </div>
