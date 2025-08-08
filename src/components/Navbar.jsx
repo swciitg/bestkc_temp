@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { name: "Home", link: "/", subItems: [] },
@@ -88,8 +89,8 @@ const Navbar = () => {
             <ul className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <li key={item.name} className="relative group">
-                  <a
-                    href={item.link}
+                  <Link
+                    to={item.link}
                     className="uppercase text-white tracking-widest text-sm hover:text-gray-300 flex items-center transition-colors"
                   >
                     {item.name}
@@ -106,18 +107,18 @@ const Navbar = () => {
                         />
                       </svg>
                     )}
-                  </a>
+                  </Link>
                   {/* Hover dropdown */}
                   {item.subItems.length > 0 && (
                     <ul className="absolute left-0 top-full mt-0 w-56 rounded-sm bg-primary-dark text-white shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                       {item.subItems.map((sub) => (
                         <li key={sub.name}>
-                          <a
-                            href={sub.link}
+                          <Link
+                            to={sub.link}
                             className="block px-4 py-2 uppercase text-sm hover:bg-primary-light transition-colors"
                           >
                             {sub.name}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -128,33 +129,33 @@ const Navbar = () => {
 
             {/* Socials (desktop) */}
             <div className="hidden md:flex items-center space-x-2">
-              <a
-                href="https://www.linkedin.com"
+              <Link
+                to="https://www.linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-[#0077b5] text-white border border-white"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn size={18} />
-              </a>
-              <a
-                href="https://twitter.com"
+              </Link>
+              <Link
+                to="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-black text-white border border-white"
                 aria-label="Twitter / X"
               >
                 <FaTwitter size={18} />
-              </a>
-              <a
-                href="https://youtube.com"
+              </Link>
+              <Link
+                to="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-[#ff0000] text-white border border-white"
                 aria-label="YouTube"
               >
                 <FaYoutube size={18} />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -173,13 +174,13 @@ const Navbar = () => {
                           hasChildren ? "" : "pr-2"
                         }`}
                       >
-                        <a
-                          href={item.link}
+                        <Link
+                          to={item.link}
                           className="uppercase text-sm tracking-widest"
                           onClick={() => hasChildren && toggleMobileSection(idx)}
                         >
                           {item.name}
-                        </a>
+                        </Link>
 
                         {hasChildren && (
                           <button
@@ -201,12 +202,12 @@ const Navbar = () => {
                         <ul className="ml-3 mt-1 mb-2 border-l border-white/15">
                           {item.subItems.map((sub) => (
                             <li key={sub.name}>
-                              <a
-                                href={sub.link}
+                              <Link
+                                to={sub.link}
                                 className="block pl-4 pr-2 py-2 text-sm hover:bg-white/10 rounded"
                               >
                                 {sub.name}
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -218,33 +219,33 @@ const Navbar = () => {
 
               {/* Socials (mobile) */}
               <div className="mt-3 flex items-center justify-start space-x-2 px-2">
-                <a
-                  href="https://www.linkedin.com"
+                <Link
+                  to="https://www.linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-[#0077b5] text-white border border-white rounded"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedinIn size={18} />
-                </a>
-                <a
-                  href="https://twitter.com"
+                </Link>
+                <Link
+                  to="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-black text-white border border-white rounded"
                   aria-label="Twitter / X"
                 >
                   <FaTwitter size={18} />
-                </a>
-                <a
-                  href="https://youtube.com"
+                </Link>
+                <Link
+                  to="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-[#ff0000] text-white border border-white rounded"
                   aria-label="YouTube"
                 >
                   <FaYoutube size={18} />
-                </a>
+                </Link>
               </div>
             </div>
           )}
