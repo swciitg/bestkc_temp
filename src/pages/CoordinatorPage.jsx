@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const coordinators = [
   {
@@ -62,12 +63,13 @@ const CoordinatorCard = ({ coordinator }) => {
         <p className="mt-1 text-sm text-gray-600">{coordinator.affiliation}</p>
 
         {coordinator.website && (
-          <a
+          <Link
+            to={coordinator.website}
             href={coordinator.website}
             className="mt-4 inline-flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium text-white bg-primary hover:opacity-90 transition"
           >
             Website →
-          </a>
+          </Link>
         )}
       </div>
     </article>

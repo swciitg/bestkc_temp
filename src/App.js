@@ -1,18 +1,13 @@
-import React from 'react'
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import VisionMission from './components/Vision'
-import Best from './components/Best'
-import Hexa from './components/Hexa'
-import ClusterActivities from './components/Cluster.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import VerticalPage from './pages/VerticalPage.jsx'
 import TeamPage from './pages/TeamPage.jsx'
 import CoordinatorPage from './pages/CoordinatorPage.jsx'
 const App = () => {
   return (
+    <BrowserRouter >
     <div className='overflow-x-hidden'>
       <Navbar/>
       <Routes>
@@ -24,6 +19,7 @@ const App = () => {
       </Routes>
       <Footer/>
     </div>
+    </BrowserRouter>
   )
 }
 
