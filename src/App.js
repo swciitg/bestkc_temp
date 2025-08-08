@@ -7,7 +7,7 @@ import TeamPage from './pages/TeamPage.jsx'
 import CoordinatorPage from './pages/CoordinatorPage.jsx'
 const App = () => {
   return (
-    <BrowserRouter >
+       <BrowserRouter basename={`/nest`} >
     <div className='overflow-x-hidden'>
       <Navbar/>
       <Routes>
