@@ -1,12 +1,13 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import VerticalPage from './pages/VerticalPage.jsx'
 import TeamPage from './pages/TeamPage.jsx'
 import CoordinatorPage from './pages/CoordinatorPage.jsx'
 const App = () => {
   return (
+    <BrowserRouter >
     <div className='overflow-x-hidden'>
       <Navbar/>
       <Routes>
@@ -18,6 +19,7 @@ const App = () => {
       </Routes>
       <Footer/>
     </div>
+    </BrowserRouter>
   )
 }
 
