@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // ----- Dummy data (kept same) -----
 const teamMembers = [
@@ -167,12 +168,12 @@ const MemberCard = ({ member }) => {
         <p className="mt-1 text-sm text-gray-600">{member.affiliation}</p>
 
         {member.website && (
-          <a
-            href={member.website}
+          <Link
+            to={member.website}
             className="mt-4 inline-flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium text-white bg-primary hover:opacity-90 transition"
           >
             Website →
-          </a>
+          </Link>
         )}
       </div>
     </article>
