@@ -19,9 +19,9 @@ const AboutSection = () => {
         <h2 className="text-4xl font-light">What is NEST Cluster?</h2>
 
         {/* Intro paragraphs */}
-        <p className="text-xl font-light leading-relaxed">
+        {/* <p className="text-xl font-light leading-relaxed">
           The North Eastern Science &amp; Technology (NEST) Cluster is a transformative initiative dedicated to accelerating research, innovation, and skill development in the North Eastern Region of India. Envisioned as a Section-8, not-for-profit company, the cluster operates through a hub-and-spoke model involving premier academic institutions, industries, government agencies, and startups across all eight northeastern states.
-        </p>
+        </p> */}
         <p className="text-xl font-light leading-relaxed">
           NEST Cluster serves as a collaborative platform to empower youth, support grassroots innovations, and foster entrepreneurship by offering training, research support, and incubation facilities across four verticals of national and regional importance:
         </p>
