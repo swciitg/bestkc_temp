@@ -127,8 +127,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            {/* Socials (desktop) */}
-            <div className="hidden md:flex items-center space-x-2">
+            {/* <div className="hidden md:flex items-center space-x-2">
               <Link
                 to="https://www.linkedin.com"
                 target="_blank"
@@ -156,7 +155,7 @@ const Navbar = () => {
               >
                 <FaYoutube size={18} />
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile menu panel */}
