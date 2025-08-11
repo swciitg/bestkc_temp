@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import VerticalPage from './pages/VerticalPage.jsx'
 import TeamPage from './pages/TeamPage.jsx'
 import CoordinatorPage from './pages/CoordinatorPage.jsx'
+import PeoplePage from './pages/PeoplePage.jsx'
 const App = () => {
   return (
     <BrowserRouter >
@@ -12,6 +13,7 @@ const App = () => {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/people" element={<PeoplePage />} />
         <Route path="/vertical" element={<VerticalPage />} />3
         <Route path="/team" element={<TeamPage />} />
         <Route path='/coordinators' element={<CoordinatorPage />} />

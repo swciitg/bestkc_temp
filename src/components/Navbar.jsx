@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import image from "../assets/image.png"
+import image from "../assets/image.png";
 const navItems = [
   { name: "Home", link: "/", subItems: [] },
   {
@@ -11,18 +11,14 @@ const navItems = [
     subItems: [
       { name: "Cluster Formation", link: "/about-us#cluster-formation" },
       { name: "Cluster Launch", link: "/about-us#cluster-launch" },
-      { name: "Section 8 Company Formation", link: "/about-us#section-8-formation" },
+      {
+        name: "Section 8 Company Formation",
+        link: "/about-us#section-8-formation",
+      },
     ],
   },
   { name: "Gallery", link: "#gallery", subItems: [] },
-  {
-    name: "People",
-    link: "#people",
-    subItems: [
-      { name: "Coordinators", link: "/coordinators" },
-      { name: "Team Members", link: "/team" },
-    ],
-  },
+   { name: "People", link: "/people", subItems: [] },
   { name: "Verticals", link: "/vertical", subItems: [] },
   { name: "Opportunities", link: "#opportunities", subItems: [] },
   { name: "Resources", link: "#resources", subItems: [] },
@@ -43,8 +39,16 @@ const Navbar = () => {
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
             {/* Left decorative circle */}
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-[#0A345A] flex-shrink-0" />
-            
+            <div className="flex-shrink-0">
+              <img
+                src="/logo.jpg"
+                alt="NEST Logo"
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover ring-1 ring-black/10"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+
             {/* Center block */}
             <div className="text-center flex-grow">
               <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-xl sm:text-2xl md:text-3xl lg:text-4xl">
@@ -59,7 +63,7 @@ const Navbar = () => {
                 className="mx-auto mt-2 h-8 sm:h-10 md:h-12 object-contain"
               />
             </div>
-            
+
             {/* Right: IIT Guwahati logo */}
             <div className="flex-shrink-0">
               <img
@@ -176,7 +180,9 @@ const Navbar = () => {
                         <Link
                           to={item.link}
                           className="uppercase text-sm tracking-widest"
-                          onClick={() => hasChildren && toggleMobileSection(idx)}
+                          onClick={() =>
+                            hasChildren && toggleMobileSection(idx)
+                          }
                         >
                           {item.name}
                         </Link>
