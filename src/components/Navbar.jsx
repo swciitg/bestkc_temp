@@ -9,7 +9,7 @@ const navItems = [
     name: "About Us",
     link: "#about-us",
     subItems: [
-      { name: "Cluster Formation", link: "/about-us#cluster-formation" },
+      { name: "Cluster Formation", link: "/cluster-formation" },
       { name: "Cluster Launch", link: "/about-us#cluster-launch" },
       {
         name: "Section 8 Company Formation",

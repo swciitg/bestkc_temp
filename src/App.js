@@ -7,6 +7,7 @@ import TeamPage from './pages/TeamPage.jsx'
 import CoordinatorPage from './pages/CoordinatorPage.jsx'
 import PeoplePage from './pages/PeoplePage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
+import ClusterFormation from './pages/ClusterFormation.jsx'
 const App = () => {
   return (
     <BrowserRouter >
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/team" element={<TeamPage />} />
         <Route path='/coordinators' element={<CoordinatorPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/cluster-formation" element={<ClusterFormation/>} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer/>
