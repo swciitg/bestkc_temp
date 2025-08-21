@@ -6,6 +6,7 @@ import VerticalPage from './pages/VerticalPage.jsx'
 import TeamPage from './pages/TeamPage.jsx'
 import CoordinatorPage from './pages/CoordinatorPage.jsx'
 import PeoplePage from './pages/PeoplePage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
 const App = () => {
   return (
     <BrowserRouter >
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/vertical" element={<VerticalPage />} />3
         <Route path="/team" element={<TeamPage />} />
         <Route path='/coordinators' element={<CoordinatorPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer/>
