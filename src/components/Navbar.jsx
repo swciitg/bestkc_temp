@@ -22,7 +22,7 @@ const navItems = [
   { name: "Verticals", link: "/vertical", subItems: [] },
   { name: "Opportunities", link: "#opportunities", subItems: [] },
   { name: "Resources", link: "#resources", subItems: [] },
-  { name: "Contact Us", link: "#contact-us", subItems: [] },
+  { name: "Contact Us", link: "/contact", subItems: [] },
 ];
 
 const Navbar = () => {
