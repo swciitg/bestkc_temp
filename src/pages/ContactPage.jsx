@@ -1,5 +1,5 @@
 // src/components/ContactUs.jsx
-import React from "react";
+import React, { useState } from "react";
 import {
   FaMapMarkerAlt,
   FaGlobe,
@@ -7,10 +7,9 @@ import {
   FaPhoneAlt,
   FaExternalLinkAlt,
 } from "react-icons/fa";
-import { Element } from "react-scroll"; // 👈 added
+import { Element } from "react-scroll";
 
 const ContactUs = () => {
-  // <<< Replace these with your real details >>>
   const org = {
     title: "North Eastern Science & Technology (NEST) Cluster",
     addressLines: [
@@ -19,16 +18,43 @@ const ContactUs = () => {
       "Amingaon, Guwahati, Assam – 781039",
       "India",
     ],
-    website: "https://example.com", // your site
-    email: "info@nestcluster.in",
+    website: "https://swc.iitg.ac.in/nest/", // swc website
+    email: "nest@iitg.ac.in", // updated email
     phone: "+91 000 000 0000",
     mapsURL: "https://maps.google.com/?q=IIT+Guwahati,+Assam+781039",
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    contact: "",
+    query: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // create email body
+    const subject = encodeURIComponent("New Query from Contact Page");
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nContact: ${formData.contact}\nQuery:\n${formData.query}`
+    );
+
+    // open user's email client with prefilled details
+    window.location.href = `mailto:${org.email}?subject=${subject}&body=${body}`;
+
+    setIsModalOpen(false);
+    setFormData({ name: "", contact: "", query: "" });
+  };
+
   return (
-    <Element name="contact-us"> {/* 👈 scroll target */}
+    <Element name="contact-us">
       <section className="w-full">
-        {/* Top banner / header */}
+        {/* Top banner */}
         <div className="relative overflow-hidden bg-gradient-to-r from-[#241a69] via-[#3b2c86] to-[#4a3480]">
           <div
             className="h-6 opacity-20"
@@ -38,39 +64,14 @@ const ContactUs = () => {
             }}
           />
           <div className="relative max-w-7xl mx-auto px-6 py-10 md:py-14">
-            <div className="pointer-events-none absolute inset-0 -z-10">
-              <div className="absolute -top-16 -left-24 w-64 h-64 rotate-12 bg-white/5" />
-              <div className="absolute top-6 right-24 w-48 h-48 -rotate-6 bg-white/5" />
-              <div className="absolute -bottom-20 left-1/3 w-72 h-72 rotate-45 bg-white/5" />
-            </div>
-
             <h1 className="text-white font-playfair text-4xl md:text-5xl font-semibold">
               Contact Us
             </h1>
           </div>
         </div>
 
-        {/* Content band */}
+        {/* Content */}
         <div className="relative bg-[#0a6d7a] py-12 md:py-16 overflow-hidden">
-          <div className="pointer-events-none absolute inset-0 -z-10">
-            <div
-              className="absolute -top-24 -left-24 w-[28rem] h-[28rem] blur-3xl opacity-20"
-              style={{
-                background:
-                  "radial-gradient(closest-side, rgba(255,255,255,.25), transparent)",
-              }}
-            />
-            <div
-              className="absolute bottom-0 right-0 w-[32rem] h-[32rem] blur-3xl opacity-10"
-              style={{
-                background:
-                  "radial-gradient(closest-side, rgba(0,0,0,.25), transparent)",
-              }}
-            />
-            <div className="absolute top-28 left-10 w-44 h-44 rotate-12 bg-white/6" />
-            <div className="absolute bottom-24 left-1/3 w-64 h-64 -rotate-12 bg-white/6" />
-          </div>
-
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
               {/* Left: details */}
@@ -121,47 +122,87 @@ const ContactUs = () => {
                     </a>
                   </div>
 
-                  <div className="pt-2">
-                    <a
-                      href={org.mapsURL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-white/15 hover:bg-white/20 transition"
+                  <div className="pt-4">
+                    <button
+                      onClick={() => setIsModalOpen(true)}
+                      className="px-4 py-2 rounded-md bg-black text-white font-medium hover:opacity-90 transition"
                     >
-                      Open in Google Maps <FaExternalLinkAlt className="text-sm" />
-                    </a>
+                      Send a Query
+                    </button>
                   </div>
                 </div>
               </div>
 
-              {/* Right: “map” placeholder block */}
+              {/* Right: Map placeholder */}
               <div className="relative">
-                <div className="rounded-lg border border-white/30 overflow-hidden shadow-lg bg-[#083f47]">
-                  <div className="h-10 bg-white/10 border-b border-white/15 flex items-center px-4 space-x-2">
-                    <span className="w-2 h-2 rounded-full bg-white/40" />
-                    <span className="w-2 h-2 rounded-full bg-white/40" />
-                    <span className="w-2 h-2 rounded-full bg-white/40" />
-                  </div>
-                  <div className="h-72 md:h-[22rem] lg:h-[24rem] relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-center text-white/80">
-                        <div className="text-sm uppercase tracking-wider">
-                          Map Placeholder
-                        </div>
-                        <div className="mt-2 text-xs opacity-80">
-                          (have to replace this with a real map)
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <div className="rounded-lg border border-white/30 overflow-hidden shadow-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4717.572343107409!2d91.69253177541485!3d26.192320477083978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a5b6bf26969f1%3A0xc752809363b33443!2sIndian%20Institute%20of%20Technology%20Guwahati!5e1!3m2!1sen!2sin!4v1756308251670!5m2!1sen!2sin"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
                 <p className="mt-3 text-white/80 text-sm">
-                  Location preview is intentionally disabled.
+                  Location: IIT Guwahati Campus
                 </p>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+            <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+              <button
+                onClick={() => setIsModalOpen(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+              >
+                ✕
+              </button>
+              <h2 className="text-xl font-semibold mb-4">Send Your Query</h2>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Name"
+                  className="w-full border rounded-md px-3 py-2"
+                />
+                <input
+                  type="text"
+                  name="contact"
+                  value={formData.contact}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Contact (Email / Phone)"
+                  className="w-full border rounded-md px-3 py-2"
+                />
+                <textarea
+                  name="query"
+                  value={formData.query}
+                  onChange={handleChange}
+                  required
+                  placeholder="Your Query"
+                  rows={4}
+                  className="w-full border rounded-md px-3 py-2"
+                />
+                <button
+                  type="submit"
+                  className="w-full bg-black text-white font-medium py-2 rounded-md hover:opacity-90 transition"
+                >
+                  Send
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
       </section>
     </Element>
   );
