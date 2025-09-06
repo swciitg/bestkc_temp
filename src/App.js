@@ -8,6 +8,9 @@ import CoordinatorPage from './pages/CoordinatorPage.jsx'
 import PeoplePage from './pages/PeoplePage.jsx'
 import ContactPage from './pages/ContactPage.jsx'
 import ClusterFormation from './pages/ClusterFormation.jsx'
+import OpportunityPage from './pages/OpportunityPage.jsx'
+import ResourcePage from './pages/ResourcePage.jsx'
+import GalleryPage from './pages/GalleryPage.jsx'
 const App = () => {
   return (
     <BrowserRouter >
@@ -21,6 +24,9 @@ const App = () => {
         <Route path='/coordinators' element={<CoordinatorPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cluster-formation" element={<ClusterFormation/>} />
+        <Route path="/opportunities" element={<OpportunityPage/>} />
+        <Route path="/resources" element={<ResourcePage/>} />
+        <Route path="/gallery" element={<GalleryPage/>} />
         {/* Add more routes as needed */}
       </Routes>
       <Footer/>
