@@ -2,7 +2,7 @@ import React from "react";
 import imgg from "../assets/imgg.jpg"
 const Hexa = () => {
   return (
-    <div className="bg-white py-20">
+    <div className="bg-white pt-20">
       <section className="py-20 bg-white">
         <div className="max-w-screen-xl mx-auto px-8">
           <h2 className="text-3xl text-center md:text-4xl font-light mb-6">

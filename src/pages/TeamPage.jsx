@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Element } from "react-scroll"; // 👈 added
 
 // ----- Dummy data (kept same) -----
 const teamMembers = [
@@ -156,7 +157,6 @@ const MemberCard = ({ member }) => {
             </div>
           </div>
         )}
-        {/* soft top gradient for text legibility if needed later */}
         <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white/80 to-transparent" />
       </div>
 
@@ -183,26 +183,26 @@ const MemberCard = ({ member }) => {
 // ----- Page -----
 const TeamPage = () => {
   return (
-    <section className="relative py-20">
-      {/* Geometric Overlay (consistent with your other sections) */}
-      {/* Decorative / Geometry overlay */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* soft gradient blobs */}
-        <div
-          className="absolute -top-24 -left-24 w-[28rem] h-[28rem] blur-3xl opacity-20"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(1,121,130,.35), transparent)",
-          }}
-        />
-        <div
-          className="absolute -bottom-24 -right-20 w-[30rem] h-[30rem] blur-3xl opacity-20"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(74,52,128,.35), transparent)",
-          }}
-        />
-
+    <Element name="people">
+      {" "}
+      {/* 👈 scroll target */}
+      <section className="relative py-20">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* background geometry (unchanged) */}
+          <div
+            className="absolute -top-24 -left-24 w-[28rem] h-[28rem] blur-3xl opacity-20"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(1,121,130,.35), transparent)",
+            }}
+          />
+          <div
+            className="absolute -bottom-24 -right-20 w-[30rem] h-[30rem] blur-3xl opacity-20"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(74,52,128,.35), transparent)",
+            }}
+          />
         {/* your original blocks */}
         <div className="absolute top-0 left-1/4 w-80 h-80 bg-primary-dark/10 -translate-y-1/3 -rotate-45" />
         <div className="absolute top-1/2 right-1/5 w-96 h-96 bg-primary-light/10 translate-y-1/4 rotate-12" />
@@ -250,24 +250,25 @@ const TeamPage = () => {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
-            People
-          </h2>
-          <p className="mt-2 text-base text-gray-600">Team Members</p>
-          <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
-        </header>
+        <div className="relative max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <header className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
+              People
+            </h2>
+            <p className="mt-2 text-base text-gray-600">Team Members</p>
+            <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
+          </header>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
-          {teamMembers.map((m) => (
-            <MemberCard key={m.name} member={m} />
-          ))}
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
+            {teamMembers.map((m) => (
+              <MemberCard key={m.name} member={m} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Element>
   );
 };
 
