@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
+// import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
