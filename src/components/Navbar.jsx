@@ -16,11 +16,18 @@ const navItems = [
       { name: "Section 8 Company Formation", link: "#section-8-formation" },
     ],
   },
-  { name: "Gallery", link: "#gallery", subItems: [] },
-  { name: "People", link: "/people", subItems: [] },
+  { name: "Gallery", link: "/gallery", subItems: [] },
+  {
+    name: "People",
+    link: "#people",
+    subItems: [
+      { name: "Coordinators", link: "/coordinators" },
+      { name: "Team Members", link: "/team" },
+    ],
+  },
   { name: "Verticals", link: "/vertical", subItems: [] },
-  { name: "Opportunities", link: "#opportunities", subItems: [] },
-  { name: "Resources", link: "#resources", subItems: [] },
+  { name: "Opportunities", link: "/opportunities", subItems: [] },
+  { name: "Resources", link: "/resources", subItems: [] },
   { name: "Contact Us", link: "/contact", subItems: [] },
 ];
 
@@ -101,7 +108,7 @@ const Navbar = () => {
       {/* =================== MAIN NAV =================== */}
       <nav className="bg-primary text-white">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
-          <div className="h-14 md:h-16 flex items-center justify-between">
+          <div className="h-14 md:h-16 flex items-center justify-center">
             {/* Hamburger (mobile) */}
             <button
               onClick={() => setMobileOpen((v) => !v)}
