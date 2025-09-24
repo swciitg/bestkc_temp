@@ -4,6 +4,7 @@ import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import image from "../assets/image.png";
+import logo from "../assets/logo.jpg";
 
 const navItems = [
   { name: "Home", link: "/", subItems: [] },
@@ -77,7 +78,7 @@ const Navbar = () => {
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
             <div className="flex-shrink-0">
               <img
-                src="/logo.jpg"
+                src={logo}
                 alt="NEST Logo"
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover ring-1 ring-black/10"
               />
