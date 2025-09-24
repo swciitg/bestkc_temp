@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 
 const coordinators = [
   {
+    name: "Prof. Devendra Jalihal",
+    position: "Coordinator",
+    affiliation: "Affiliation TBD",
+    website: "#",
+    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Devendra",
+  },
+  {
     name: "Prof. Vimal Katiyar",
     position: "Coordinator",
     affiliation: "Affiliation TBD",
@@ -113,11 +120,21 @@ const CoordinatorPage = () => {
           <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
         </header>
 
-        <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8 place-items-center">
-          {coordinators.map((c) => (
-            <CoordinatorCard key={c.name} coordinator={c} />
-          ))}
-        </div>
+        <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8">
+  {coordinators.map((c, idx) => (
+    <div
+      key={c.name}
+      className={
+        idx === coordinators.length - 1
+          ? "sm:col-span-2 flex justify-center"
+          : "flex justify-center"
+      }
+    >
+      <CoordinatorCard coordinator={c} />
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );
