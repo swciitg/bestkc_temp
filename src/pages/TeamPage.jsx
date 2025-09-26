@@ -60,6 +60,13 @@ const teamMembers = [
     website: "#",
     imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Raghvendra",
   },
+   {
+    name: "Dr. Pankaj Tiwari",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "#",
+    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Pankaj",
+  },
   {
     name: "Dr. Ravindra Kr. Jha",
     position: "Faculty",
