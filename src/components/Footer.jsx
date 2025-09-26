@@ -8,7 +8,7 @@ const Footer = () => {
           {/* <p>Foundation for Bengaluru Science and Technology</p> */}
           <p>Indian Institute of Technology, Guwahati,</p>
           <p>Guwahati – 781039, Assam, India</p>
-          <p>Phone: + 91 361 258 22787</p>
+          <p>Phone: + 91 361 258 2278</p>
           {/* <p>CIN : U72100KA2024NPL188452</p> */}
 
           <hr className="border-t border-white/50 my-6" />
