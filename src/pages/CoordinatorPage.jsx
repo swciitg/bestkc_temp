@@ -121,20 +121,19 @@ const CoordinatorPage = () => {
         </header>
 
         <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8">
-  {coordinators.map((c, idx) => (
-    <div
-      key={c.name}
-      className={
-        idx === coordinators.length - 1
-          ? "sm:col-span-2 flex justify-center"
-          : "flex justify-center"
-      }
-    >
-      <CoordinatorCard coordinator={c} />
-    </div>
-  ))}
-</div>
-
+          {coordinators.map((c, idx) => (
+            <div
+              key={c.name}
+              className={
+                idx === 0
+                  ? "sm:col-span-2 flex justify-center"
+                  : "flex justify-center"
+              }
+            >
+              <CoordinatorCard coordinator={c} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
