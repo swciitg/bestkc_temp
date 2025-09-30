@@ -8,120 +8,120 @@ const teamMembers = [
     name: "Dr. Amit Kumar",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Amit",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=amk",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/eaec5dc6f1a635760907dcb8f702f584.jpg",
   },
   {
     name: "Dr. Ankush Bag",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Ankush",
+    website: "https://www.iitg.ac.in/nano/cfn/ankushfaculty.html",
+    imageUrl: "https://www.iitg.ac.in/nano/cfn/pictures/ankushbag.jpg",
   },
   {
     name: "Dr. Chiranjib Sur",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Chiranjib",
+    website: "https://www.iitg.ac.in/sob/faculty_profile.php?id=Y2hpcmFuamli",
+    imageUrl: "https://www.iitg.ac.in/sob/faculty/chiranjib_sur.jpg",
   },
   {
     name: "Dr. Debanga Raj Neog",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Debanga",
+    website: "https://debanga.github.io/",
+    imageUrl: "https://debanga.github.io/images/debanga-554x576.jpg",
   },
   {
     name: "Prof. G. Pugazhenthi",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Pugazhenthi",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=gp",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/646a8812bcc9f8acfb7c40a3ff9e606a.jpg",
   },
   {
     name: "Dr. Mahima Arrawatia",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Mahima",
+    website: "https://jeeadv.iitg.ac.in/eee/faculty_research.php?name=mha",
+    imageUrl: "https://www.iitg.ac.in/storage/faculty/3229img.jpg",
   },
   {
     name: "Dr. Poonam Kumari",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Poonam",
+    website: "https://iitg.ac.in/mech/faculty/kpmech/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4107.original.jpg",
   },
   {
     name: "Dr. Raghvendra Gupta",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Raghvendra",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=rg",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/075425f5976765e745fe90b7f0369d7a.jpg",
   },
    {
     name: "Dr. Pankaj Tiwari",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Pankaj",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=pt",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/d745db61aae61a5d4bb97fee0ebbae69026025a6.jpg",
   },
   {
     name: "Dr. Ravindra Kr. Jha",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Ravindra",
+    website: "https://www.iitg.ac.in/eee/faculty_profile.php?name=rkj",
+    imageUrl: "https://www.iitg.ac.in/eee/faculty/d19bc93884b38e4c09c1ccbc505ccab4.jpg",
   },
   {
     name: "Dr. Sajan Kapil",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Sajan",
+    website: "https://iitg.ac.in/mech/faculty/sajankapil/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4279.original.jpg",
   },
   {
     name: "Prof. Sreedeep S.",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Sreedeep",
+    website: "http://sree21s.wixsite.com/srees",
+    imageUrl: "https://static.wixstatic.com/media/9462d9_847f2536e21d4612a9106f61da4366e1~mv2.jpg/v1/fill/w_186,h_241,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9462d9_847f2536e21d4612a9106f61da4366e1~mv2.jpg",
   },
   {
     name: "Dr. Tanmay Dutta",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Tanmay",
+    website: "https://www.iitg.ac.in/eee/faculty_profile.php?name=td",
+    imageUrl: "https://www.iitg.ac.in/eee/faculty/b6503d48be1e2ee97f22d06bf3d30631.jpg",
   },
   {
     name: "Dr. Tarkes Dora Pallicitiy",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Tarkes",
+    website: "https://iitg.ac.in/mech/faculty/tarkes/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/tarkes_300x400_wU9rRu6.original.jpg",
   },
   {
     name: "Dr. Teena Sharma",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Teena",
+    website: "https://fac.iitg.ac.in/teena/",
+    imageUrl: "https://fac.iitg.ac.in/teena/img/teena.jpg",
   },
   {
     name: "Dr. Ujendra Kr. Komal",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Ujendra",
+    website: "https://www.iitg.ac.in/mech/faculty/ukk/",
+    imageUrl: "https://www.iitg.ac.in/mech/media/images/Picture_5.original.png",
   },
   {
     name: "Dr. Vivek Padmanabha",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Vivek",
+    website: "https://www.iitg.ac.in/civil/home_faculty_profile.php?slno=S1FHM3A5ZDNvWFpaSlluVzNRTHZ2Zz09",
+    imageUrl: "https://www.iitg.ac.in/civil/faculty/a4bbc816a415c026f6658674b0c21ee42d8128fejpeg",
   },
 ];
 
@@ -146,13 +146,13 @@ const MemberCard = ({ member }) => {
       </span>
 
       {/* Image / Fallback */}
-      <div className="relative aspect-[4/3] bg-gray-100">
+      <div className="relative aspect-[4/4] bg-gray-100">
         {!broken ? (
           <img
             src={member.imageUrl}
             alt={member.name}
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full"
             onError={() => setBroken(true)}
           />
         ) : (

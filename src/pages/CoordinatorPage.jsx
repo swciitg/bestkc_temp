@@ -6,22 +6,22 @@ const coordinators = [
     name: "Prof. Devendra Jalihal",
     position: "Coordinator",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Devendra",
+    website: "https://www.iitg.ac.in/iitg_faculty_details?fac=ZXpYUlJGUmZrK0hld1BzSVN0bnBUQT09",
+    imageUrl: "https://imgs.search.brave.com/3VimyUbpoli6Dhxakp6KKJb6TBq5inE8fk8l0DsbC1Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9paXRn/LmFjLmluL3N0b3Jh/Z2UvbWVkaWEvYmY5/MGRiNDY5OWQxMDk4/OTk0MDk4MWZmOGU2/OTMxYTUuJTIwRGV2/ZW5kcmElMjBKYWxp/aGFsLCUyMERpcmVj/dG9yLCUyMElJVCUy/MEd1d2FoYXRp",
   },
   {
     name: "Prof. Vimal Katiyar",
     position: "Coordinator",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Vimal",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=vk",
+    imageUrl: "https://event.iitg.ac.in/researchconclave/rc20/assets/img/Vimal%20Katiyar.png",
   },
   {
     name: "Prof. Rakhi Chaturvedi",
     position: "Coordinator",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Rakhi",
+    website: "https://www.iitg.ac.in/rakhi_chaturvedi/profile.html",
+    imageUrl: "https://images.news18.com/ibnlive/uploads/2022/03/iit-guwahati-164665401116x9.jpg",
   },
 ];
 
@@ -121,20 +121,19 @@ const CoordinatorPage = () => {
         </header>
 
         <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8">
-  {coordinators.map((c, idx) => (
-    <div
-      key={c.name}
-      className={
-        idx === coordinators.length - 1
-          ? "sm:col-span-2 flex justify-center"
-          : "flex justify-center"
-      }
-    >
-      <CoordinatorCard coordinator={c} />
-    </div>
-  ))}
-</div>
-
+          {coordinators.map((c, idx) => (
+            <div
+              key={c.name}
+              className={
+                idx === 0
+                  ? "sm:col-span-2 flex justify-center"
+                  : "flex justify-center"
+              }
+            >
+              <CoordinatorCard coordinator={c} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
