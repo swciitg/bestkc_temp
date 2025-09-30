@@ -146,13 +146,13 @@ const MemberCard = ({ member }) => {
       </span>
 
       {/* Image / Fallback */}
-      <div className="relative aspect-[4/3] bg-gray-100">
+      <div className="relative aspect-[4/4] bg-gray-100">
         {!broken ? (
           <img
             src={member.imageUrl}
             alt={member.name}
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full"
             onError={() => setBroken(true)}
           />
         ) : (
