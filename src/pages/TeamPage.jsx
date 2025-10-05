@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Element } from "react-scroll"; // 👈 added
 
 // ----- Dummy data (kept same) -----
 const teamMembers = [
@@ -7,113 +8,120 @@ const teamMembers = [
     name: "Dr. Amit Kumar",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Amit",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=amk",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/eaec5dc6f1a635760907dcb8f702f584.jpg",
   },
   {
     name: "Dr. Ankush Bag",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Ankush",
+    website: "https://www.iitg.ac.in/nano/cfn/ankushfaculty.html",
+    imageUrl: "https://www.iitg.ac.in/nano/cfn/pictures/ankushbag.jpg",
   },
   {
     name: "Dr. Chiranjib Sur",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Chiranjib",
+    website: "https://www.iitg.ac.in/sob/faculty_profile.php?id=Y2hpcmFuamli",
+    imageUrl: "https://www.iitg.ac.in/sob/faculty/chiranjib_sur.jpg",
   },
   {
     name: "Dr. Debanga Raj Neog",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Debanga",
+    website: "https://debanga.github.io/",
+    imageUrl: "https://debanga.github.io/images/debanga-554x576.jpg",
   },
   {
     name: "Prof. G. Pugazhenthi",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Pugazhenthi",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=gp",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/646a8812bcc9f8acfb7c40a3ff9e606a.jpg",
   },
   {
     name: "Dr. Mahima Arrawatia",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Mahima",
+    website: "https://jeeadv.iitg.ac.in/eee/faculty_research.php?name=mha",
+    imageUrl: "https://www.iitg.ac.in/storage/faculty/3229img.jpg",
   },
   {
     name: "Dr. Poonam Kumari",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Poonam",
+    website: "https://iitg.ac.in/mech/faculty/kpmech/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4107.original.jpg",
   },
   {
     name: "Dr. Raghvendra Gupta",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Raghvendra",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=rg",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/075425f5976765e745fe90b7f0369d7a.jpg",
+  },
+   {
+    name: "Dr. Pankaj Tiwari",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=pt",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/d745db61aae61a5d4bb97fee0ebbae69026025a6.jpg",
   },
   {
     name: "Dr. Ravindra Kr. Jha",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Ravindra",
+    website: "https://www.iitg.ac.in/eee/faculty_profile.php?name=rkj",
+    imageUrl: "https://www.iitg.ac.in/eee/faculty/d19bc93884b38e4c09c1ccbc505ccab4.jpg",
   },
   {
     name: "Dr. Sajan Kapil",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Sajan",
+    website: "https://iitg.ac.in/mech/faculty/sajankapil/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4279.original.jpg",
   },
   {
     name: "Prof. Sreedeep S.",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Sreedeep",
+    website: "http://sree21s.wixsite.com/srees",
+    imageUrl: "https://static.wixstatic.com/media/9462d9_847f2536e21d4612a9106f61da4366e1~mv2.jpg/v1/fill/w_186,h_241,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9462d9_847f2536e21d4612a9106f61da4366e1~mv2.jpg",
   },
   {
     name: "Dr. Tanmay Dutta",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Tanmay",
+    website: "https://www.iitg.ac.in/eee/faculty_profile.php?name=td",
+    imageUrl: "https://www.iitg.ac.in/eee/faculty/b6503d48be1e2ee97f22d06bf3d30631.jpg",
   },
   {
     name: "Dr. Tarkes Dora Pallicitiy",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Tarkes",
+    website: "https://iitg.ac.in/mech/faculty/tarkes/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/tarkes_300x400_wU9rRu6.original.jpg",
   },
   {
     name: "Dr. Teena Sharma",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Teena",
+    website: "https://fac.iitg.ac.in/teena/",
+    imageUrl: "https://fac.iitg.ac.in/teena/img/teena.jpg",
   },
   {
     name: "Dr. Ujendra Kr. Komal",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Ujendra",
+    website: "https://www.iitg.ac.in/mech/faculty/ukk/",
+    imageUrl: "https://www.iitg.ac.in/mech/media/images/Picture_5.original.png",
   },
   {
     name: "Dr. Vivek Padmanabha",
     position: "Faculty",
     affiliation: "Affiliation TBD",
-    website: "#",
-    imageUrl: "https://placehold.co/150x150/E0E0E0/333333?text=Vivek",
+    website: "https://www.iitg.ac.in/civil/home_faculty_profile.php?slno=S1FHM3A5ZDNvWFpaSlluVzNRTHZ2Zz09",
+    imageUrl: "https://www.iitg.ac.in/civil/faculty/a4bbc816a415c026f6658674b0c21ee42d8128fejpeg",
   },
 ];
 
@@ -138,13 +146,13 @@ const MemberCard = ({ member }) => {
       </span>
 
       {/* Image / Fallback */}
-      <div className="relative aspect-[4/3] bg-gray-100">
+      <div className="relative aspect-[4/4] bg-gray-100">
         {!broken ? (
           <img
             src={member.imageUrl}
             alt={member.name}
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full"
             onError={() => setBroken(true)}
           />
         ) : (
@@ -156,7 +164,6 @@ const MemberCard = ({ member }) => {
             </div>
           </div>
         )}
-        {/* soft top gradient for text legibility if needed later */}
         <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white/80 to-transparent" />
       </div>
 
@@ -183,26 +190,26 @@ const MemberCard = ({ member }) => {
 // ----- Page -----
 const TeamPage = () => {
   return (
-    <section className="relative py-20">
-      {/* Geometric Overlay (consistent with your other sections) */}
-      {/* Decorative / Geometry overlay */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        {/* soft gradient blobs */}
-        <div
-          className="absolute -top-24 -left-24 w-[28rem] h-[28rem] blur-3xl opacity-20"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(1,121,130,.35), transparent)",
-          }}
-        />
-        <div
-          className="absolute -bottom-24 -right-20 w-[30rem] h-[30rem] blur-3xl opacity-20"
-          style={{
-            background:
-              "radial-gradient(closest-side, rgba(74,52,128,.35), transparent)",
-          }}
-        />
-
+    <Element name="people">
+      {" "}
+      {/* 👈 scroll target */}
+      <section className="relative py-20">
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          {/* background geometry (unchanged) */}
+          <div
+            className="absolute -top-24 -left-24 w-[28rem] h-[28rem] blur-3xl opacity-20"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(1,121,130,.35), transparent)",
+            }}
+          />
+          <div
+            className="absolute -bottom-24 -right-20 w-[30rem] h-[30rem] blur-3xl opacity-20"
+            style={{
+              background:
+                "radial-gradient(closest-side, rgba(74,52,128,.35), transparent)",
+            }}
+          />
         {/* your original blocks */}
         <div className="absolute top-0 left-1/4 w-80 h-80 bg-primary-dark/10 -translate-y-1/3 -rotate-45" />
         <div className="absolute top-1/2 right-1/5 w-96 h-96 bg-primary-light/10 translate-y-1/4 rotate-12" />
@@ -250,24 +257,25 @@ const TeamPage = () => {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        {/* Header */}
-        <header className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
-            People
-          </h2>
-          <p className="mt-2 text-base text-gray-600">Team Members</p>
-          <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
-        </header>
+        <div className="relative max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <header className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
+              People
+            </h2>
+            <p className="mt-2 text-base text-gray-600">Team Members</p>
+            <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
+          </header>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
-          {teamMembers.map((m) => (
-            <MemberCard key={m.name} member={m} />
-          ))}
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-7">
+            {teamMembers.map((m) => (
+              <MemberCard key={m.name} member={m} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Element>
   );
 };
 
