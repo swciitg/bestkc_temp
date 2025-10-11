@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { useState } from "react";
+// import { Link } from "react-router-dom";
+import MemberCard from "../components/membersCard";
+import CoordinatorCard from "../components/coordinatorCard";
 
 const coordinators = [
   {
@@ -25,7 +27,151 @@ const coordinators = [
   },
 ];
 
-const initialsOf = (name = "") =>
+const teamMembers = [
+  {
+    name: "Prof. Devendra Jalihal",
+    position: "Coordinator",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/iitg_faculty_details?fac=ZXpYUlJGUmZrK0hld1BzSVN0bnBUQT09",
+    imageUrl: "https://imgs.search.brave.com/3VimyUbpoli6Dhxakp6KKJb6TBq5inE8fk8l0DsbC1Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9paXRn/LmFjLmluL3N0b3Jh/Z2UvbWVkaWEvYmY5/MGRiNDY5OWQxMDk4/OTk0MDk4MWZmOGU2/OTMxYTUuJTIwRGV2/ZW5kcmElMjBKYWxp/aGFsLCUyMERpcmVj/dG9yLCUyMElJVCUy/MEd1d2FoYXRp",
+  },
+  {
+    name: "Prof. Vimal Katiyar",
+    position: "Coordinator",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=vk",
+    imageUrl: "https://event.iitg.ac.in/researchconclave/rc20/assets/img/Vimal%20Katiyar.png",
+  },
+  {
+    name: "Prof. Rakhi Chaturvedi",
+    position: "Coordinator",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/rakhi_chaturvedi/profile.html",
+    imageUrl: "https://images.news18.com/ibnlive/uploads/2022/03/iit-guwahati-164665401116x9.jpg",
+  },
+  {
+    name: "Dr. Amit Kumar",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=amk",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/eaec5dc6f1a635760907dcb8f702f584.jpg",
+  },
+  {
+    name: "Dr. Ankush Bag",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/nano/cfn/ankushfaculty.html",
+    imageUrl: "https://www.iitg.ac.in/nano/cfn/pictures/ankushbag.jpg",
+  },
+  {
+    name: "Dr. Chiranjib Sur",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/sob/faculty_profile.php?id=Y2hpcmFuamli",
+    imageUrl: "https://www.iitg.ac.in/sob/faculty/chiranjib_sur.jpg",
+  },
+  {
+    name: "Dr. Debanga Raj Neog",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://debanga.github.io/",
+    imageUrl: "https://debanga.github.io/images/debanga-554x576.jpg",
+  },
+  {
+    name: "Prof. G. Pugazhenthi",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=gp",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/646a8812bcc9f8acfb7c40a3ff9e606a.jpg",
+  },
+  {
+    name: "Dr. Mahima Arrawatia",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://jeeadv.iitg.ac.in/eee/faculty_research.php?name=mha",
+    imageUrl: "https://www.iitg.ac.in/storage/faculty/3229img.jpg",
+  },
+  {
+    name: "Dr. Poonam Kumari",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://iitg.ac.in/mech/faculty/kpmech/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4107.original.jpg",
+  },
+  {
+    name: "Dr. Raghvendra Gupta",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=rg",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/075425f5976765e745fe90b7f0369d7a.jpg",
+  },
+   {
+    name: "Dr. Pankaj Tiwari",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/chemeng/faculty_profile.php?name=pt",
+    imageUrl: "https://www.iitg.ac.in/chemeng/faculty/d745db61aae61a5d4bb97fee0ebbae69026025a6.jpg",
+  },
+  {
+    name: "Dr. Ravindra Kr. Jha",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/eee/faculty_profile.php?name=rkj",
+    imageUrl: "https://www.iitg.ac.in/eee/faculty/d19bc93884b38e4c09c1ccbc505ccab4.jpg",
+  },
+  {
+    name: "Dr. Sajan Kapil",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://iitg.ac.in/mech/faculty/sajankapil/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4279.original.jpg",
+  },
+  {
+    name: "Prof. Sreedeep S.",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "http://sree21s.wixsite.com/srees",
+    imageUrl: "https://static.wixstatic.com/media/9462d9_847f2536e21d4612a9106f61da4366e1~mv2.jpg/v1/fill/w_186,h_241,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9462d9_847f2536e21d4612a9106f61da4366e1~mv2.jpg",
+  },
+  {
+    name: "Dr. Tanmay Dutta",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/eee/faculty_profile.php?name=td",
+    imageUrl: "https://www.iitg.ac.in/eee/faculty/b6503d48be1e2ee97f22d06bf3d30631.jpg",
+  },
+  {
+    name: "Dr. Tarkes Dora Pallicitiy",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://iitg.ac.in/mech/faculty/tarkes/",
+    imageUrl: "https://iitg.ac.in/mech/media/images/tarkes_300x400_wU9rRu6.original.jpg",
+  },
+  {
+    name: "Dr. Teena Sharma",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://fac.iitg.ac.in/teena/",
+    imageUrl: "https://fac.iitg.ac.in/teena/img/teena.jpg",
+  },
+  {
+    name: "Dr. Ujendra Kr. Komal",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/mech/faculty/ukk/",
+    imageUrl: "https://www.iitg.ac.in/mech/media/images/Picture_5.original.png",
+  },
+  {
+    name: "Dr. Vivek Padmanabha",
+    position: "Faculty",
+    affiliation: "Affiliation TBD",
+    website: "https://www.iitg.ac.in/civil/home_faculty_profile.php?slno=S1FHM3A5ZDNvWFpaSlluVzNRTHZ2Zz09",
+    imageUrl: "https://www.iitg.ac.in/civil/faculty/a4bbc816a415c026f6658674b0c21ee42d8128fejpeg",
+  },
+];
+
+
+export const initialsOf = (name = "") =>
   name
     .split(" ")
     .filter(Boolean)
@@ -33,57 +179,7 @@ const initialsOf = (name = "") =>
     .map((w) => w[0]?.toUpperCase())
     .join("");
 
-const CoordinatorCard = ({ coordinator }) => {
-  const [broken, setBroken] = useState(false);
 
-  return (
-    <article className="relative bg-white/95 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-xl transition-all duration-200 overflow-hidden border border-gray-100 w-full max-w-sm">
-      <span className="absolute top-3 left-3 z-10 px-2 py-0.5 text-xs tracking-wide rounded-full bg-accent/10 text-accent border border-accent/20">
-        {coordinator.position}
-      </span>
-
-      <div className="relative aspect-[4/3] bg-gray-100">
-        {!broken ? (
-          <img
-            src={coordinator.imageUrl}
-            alt={coordinator.name}
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover"
-            onError={() => setBroken(true)}
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-primary/10">
-            <div className="w-16 h-16 rounded-full bg-accent/15 flex items-center justify-center">
-              <span className="text-accent font-semibold">
-                {initialsOf(coordinator.name)}
-              </span>
-            </div>
-          </div>
-        )}
-        <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white/80 to-transparent" />
-      </div>
-
-      <div className="p-5 text-center">
-        <h3 className="text-lg font-semibold text-gray-900 font-inter">
-          {coordinator.name}
-        </h3>
-        <p className="mt-1 text-sm text-gray-600">{coordinator.affiliation}</p>
-
-        {coordinator.website && (
-          <Link
-            to={coordinator.website}
-            href={coordinator.website}
-            className="mt-4 inline-flex items-center justify-center px-3 py-1.5 rounded-md text-sm font-medium text-white bg-primary hover:opacity-90 transition"
-          >
-            Website →
-          </Link>
-        )}
-      </div>
-    </article>
-  );
-};
-
-// ===== Page =====
 const CoordinatorPage = () => {
   return (
     <section className="relative py-20">
@@ -110,7 +206,7 @@ const CoordinatorPage = () => {
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
-        <header className="text-center mb-12">
+        {/* <header className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
             Coordinators
           </h2>
@@ -118,9 +214,9 @@ const CoordinatorPage = () => {
             Our Esteemed Coordinators
           </p>
           <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
-        </header>
+        </header> */}
 
-        <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {/* <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-2 gap-8">
           {coordinators.map((c, idx) => (
             <div
               key={c.name}
@@ -133,7 +229,23 @@ const CoordinatorPage = () => {
               <CoordinatorCard coordinator={c} />
             </div>
           ))}
-        </div>
+        </div> */}
+
+        {/* Header */}
+          <header className="text-center mt-24 mb-12">
+            <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
+              The Team
+            </h2>
+            {/* <p className="mt-2 text-base text-gray-600">Team Members</p> */}
+            <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
+          </header>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-7">
+            {teamMembers.map((m) => (
+              <MemberCard key={m.name} member={m} />
+            ))}
+          </div>
       </div>
     </section>
   );

@@ -1,6 +1,12 @@
 // src/components/EnhancedCarousel.jsx
 import React, { useRef, useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import innovation from '../assets/innovation.png'
+import tech from '../assets/tech.webp'
+import local from '../assets/local.png'
+import ai from '../assets/ai.png'
+import green from '../assets/green.png'
+import plastic from '../assets/plastic.png'
 
 const slides = [
   {
@@ -8,36 +14,42 @@ const slides = [
     heading: 'Uniting Northeast for a Tech-Driven Tomorrow',
     text: 'A dynamic ecosystem to empower research, innovation, and entrepreneurship across the North Eastern region.',
     bgColor: 'bg-[#4a3480]',
+    image : tech
   },
   {
     id: 2,
     heading: 'From Ideas to Impact – Fueling Innovation, Skills & Startups',
     text: 'NEST Cluster bridges academia, industry, and society to transform knowledge into scalable solutions for regional development.',
     bgColor: 'bg-[#2e2363]',
+    image : innovation
   },
   {
     id: 3,
     heading: 'Nurturing Local Ideas into Lifelong Solutions',
     text: 'Empowering rural innovation through tinkering labs, prototyping, and inclusive technology for real-world challenges.',
     bgColor: 'bg-[#1e1747]',
+    image : local
   },
   {
     id: 4,
     heading: 'Shaping the Future with AI, Data Science & Chip Technologies',
     text: 'Advanced training, R&D, and hardware innovation for a digitally empowered Northeast.',
     bgColor: 'bg-[#4a3480]',
+    image : ai
   },
   {
     id: 5,
     heading: 'Green Gold for a Greener Economy',
     text: 'Unlocking the potential of bamboo for sustainable products, rural livelihood, and entrepreneurial growth.',
     bgColor: 'bg-[#2e2363]',
+    image : green
   },
   {
     id: 6,
     heading: 'Innovating for a Plastic-Free, Sustainable Northeast',
     text: 'Pioneering bioplastics, microplastic awareness, and waste-to-value technologies for environmental transformation.',
     bgColor: 'bg-[#1e1747]',
+    image : plastic
   },
 ];
 
@@ -123,7 +135,7 @@ const EnhancedCarousel = () => {
         aria-roledescription="carousel"
         aria-live="polite"
       >
-        {slides.map(({ id, heading, text, bgColor }, idx) => (
+        {slides.map(({ id, heading, text, bgColor , image}, idx) => (
           <section
             key={id}
             className={`relative min-w-full snap-center flex-shrink-0 ${bgColor}`}
@@ -134,26 +146,36 @@ const EnhancedCarousel = () => {
             <div className="absolute inset-0 bg-black/25" />
 
             {/* Content panel */}
-            <div
+              <div
               className="
                 relative h-full max-w-5xl
-                mx-auto px-4 sm:px-6 lg:px-10
-                flex flex-col justify-center
-                text-white
+                mx-auto px-2 sm:px-4 lg:px-10
+                flex  justify-center items-center
               "
-            >
-              <h3
-                className="
-                  font-semibold leading-snug mb-3
-                  text-[clamp(20px,4.5vw,42px)]
-                "
               >
-                {heading}
-              </h3>
-              <p className="text-white/90 leading-relaxed text-[clamp(14px,2.2vw,18px)] max-w-3xl">
-                {text}
-              </p>
-            </div>
+                <div
+                className='flex flex-col justify-center al
+                text-white'
+                >
+                  <h3
+                  className="
+                    font-semibold leading-snug mb-3
+                    text-[clamp(20px,4.5vw,42px)]
+                  "
+                >
+                  {heading}
+                  </h3>
+                  <p className="text-white/90 leading-relaxed text-[clamp(14px,2.2vw,18px)] max-w-3xl">
+                    {text}
+                  </p>
+                </div>
+                <img 
+                src={image}
+                className='w-36 h-36 '
+                />
+              </div>
+              
+
           </section>
         ))}
       </div>

@@ -11,6 +11,8 @@ import ClusterFormation from './pages/ClusterFormation.jsx'
 import OpportunityPage from './pages/OpportunityPage.jsx'
 import ResourcePage from './pages/ResourcePage.jsx'
 import GalleryPage from './pages/GalleryPage.jsx'
+import LogoExplanation from './pages/Logo.jsx'
+import Activities from './pages/Activities.jsx'
 const App = () => {
   return (
        <BrowserRouter basename={`/nest`} >
@@ -20,13 +22,16 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/people" element={<PeoplePage />} />
         <Route path="/vertical" element={<VerticalPage />} />3
-        <Route path="/team" element={<TeamPage />} />
-        <Route path='/coordinators' element={<CoordinatorPage />} />
+        {/* <Route path="/team" element={<TeamPage />} /> */}
+        <Route path='/team' element={<CoordinatorPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/cluster-formation" element={<ClusterFormation/>} />
         <Route path="/opportunities" element={<OpportunityPage/>} />
+        <Route path="/activities" element={<Activities/>} />
         <Route path="/resources" element={<ResourcePage/>} />
         <Route path="/gallery" element={<GalleryPage/>} />
+        <Route path="/logo" element={<LogoExplanation/>} />
+
         {/* Add more routes as needed */}
       </Routes>
       <Footer/>

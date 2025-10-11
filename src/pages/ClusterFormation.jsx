@@ -1,7 +1,8 @@
 import React from "react";
 import wheel from "../assets/about.png"; 
-import Main from "../components/Main.jsx"; 
+// import Main from "../components/Main.jsx"; 
 import { Element } from "react-scroll"; // 👈 added
+import cluster from '../assets/cluster.png'
 
 const ClusterFormation = () => {
   return (
@@ -53,42 +54,22 @@ const ClusterFormation = () => {
 
                 <div className="space-y-6 text-lg leading-relaxed font-light">
                   <p>
-                    Establishing a sustainable innovation ecosystem requires a
-                    well-connected network of entrepreneurs, domestic and foreign
-                    enterprises, educational and research institutions, government
-                    agencies, investors, business incubators, and technology &amp;
-                    business mentors.
+                    Eating enty win hi planed cluster is crucial for efcient functioning and decision-making. 
+                    It will help streamline communication, delegation of tasks and resource allocation, ensuring its 
+                    smooth functioning and achieving the targeted goals.
                   </p>
 
                   <p>
-                    This need has led to the development of regional innovation
-                    clusters in many parts of the world. Such clusters bring
-                    together capital, expertise, and talent to foster
-                    breakthroughs that have a meaningful impact on society. The{" "}
-                    <strong>
-                      North Eastern Science &amp; Technology (NEST) Cluster
-                    </strong>{" "}
-                    is envisioned as a collaborative effort of leading academic
-                    institutions, industry partners, startups, and government
-                    bodies across the Northeast—working together through a
-                    hub-and-spoke model to drive inclusive growth.
+                    In this sience & Techmology cluster, the Director, IT Guwahati willake charge as the 
+                    Chairman of this Section 8 Company, which will be run by the Board of Directors and will 
+                    be coordinating with DoNER Ministry and the other members of the cluster. The decisions 
+                    on important matters will be taken by the Appraisal/ Apex Committee on the recommendation 
+                    of the Ministry and the Chairman. The Program Director position will be held by Prof. 
+                    Vimal Katiyar, Dept. of Chemical Engineering, who will be overall responsible for the 
+                    entire functioning of the cluster including coordination with CEO, reporting to the Board 
+                    and looking after the day-to-day activities.
                   </p>
 
-                  <p>
-                    Anchored by <strong>IIT Guwahati</strong> with support from
-                    national partners, and enabled by outcome-driven
-                    collaboration, the NEST Cluster aims to accelerate research,
-                    innovation, and entrepreneurship—turning ideas into scalable,
-                    sustainable solutions for the region.
-                  </p>
-
-                  <p>
-                    With state-of-the-art infrastructure, shared facilities,
-                    capacity-building programmes, and strong industry linkages,
-                    the Cluster will catalyse technology transfer, skill
-                    development, startup incubation, and job creation across the
-                    Northeast.
-                  </p>
                 </div>
               </div>
 
@@ -96,13 +77,10 @@ const ClusterFormation = () => {
               <div className="relative">
                 <div className="absolute -inset-4 md:-inset-6 rounded-3xl bg-white/5 blur-sm" />
                 <figure className="relative w-full max-w-[720px] mx-auto">
-                  <img
-                    src={wheel}
-                    alt="Cluster wheel"
-                    className="w-full h-auto drop-shadow-2xl rounded-xl"
-                    loading="eager"
-                    decoding="async"
-                  />
+                  
+                  <img 
+                  src={cluster} alt="" 
+                  className="h-[500px] "/>
                 </figure>
               </div>
             </div>
@@ -110,8 +88,8 @@ const ClusterFormation = () => {
         </Element>
       </main>
 
-      <Main />
-
+      {/* <Main /> */}
+     
       {/* ---------- Section 8 Company Formation ---------- */}
       <Element name="section-8-formation"> {/* 👈 scroll target */}
         <section className="relative overflow-hidden bg-[#0a6b75] text-white">
@@ -156,18 +134,42 @@ const ClusterFormation = () => {
             <h2 className="font-playfair text-4xl md:text-5xl mb-8">
               Section 8 Company Formation
             </h2>
-            <p className="max-w-6xl font-inter text-xl md:text-2xl leading-relaxed text-white/95">
-              The Bengaluru S&amp;T Cluster took a significant leap forward by
-              transitioning into a Section 8 Company on{" "}
-              <span className="whitespace-nowrap">14th May 2024</span>. Four
-              leading institutions—namely the Indian Institute of Science (IISc),
-              the National Centre for Biological Sciences (NCBS), the Jawaharlal
-              Nehru Centre for Advanced Scientific Research (JNCASR), and the
-              International Centre for Theoretical Sciences (ICTS)—came together
-              to establish the non-profit organization named{" "}
-              <em>Foundation for Bengaluru Science and Technology</em>.
+            <p className="text-lg">
+              The North Eastern Science and Technology Cluster (NEST Cluster) has been established as a 
+              Section-8 Company under the Companies Act, 2013, with its headquarters at IIT Guwahati. 
+              The Cluster aims to promote Research & Development, skill development, and entrepreneurial 
+              activities across the North Eastern Region (NER) of India.
+
+            </p>
+
+            <p className="text-lg">
+              Operating as a not-for-profit entity, the NEST Cluster will function in a 
+              self-sustainable mode within five years, leveraging the scientific and technological 
+              expertise available at IIT Guwahati and other premier institutions of the region.
+
+            </p>
+
+            <p className="text-lg">
+            The Cluster brings together researchers, scientists, innovators, entrepreneurs, and 
+            industry experts to collaborate on cutting-edge technologies such as Semiconductors, 
+            Artificial Intelligence, Community-based Grassroots Innovations, Bamboo-based Technologies, 
+            Product Development, and Biodegradable Plastics.
+            </p>
+            <p className="text-lg">
+              Through its state-of-the-art laboratories, tinkering and incubation facilities, and 
+              networking platforms, the Cluster will foster innovation, provide training and certification, 
+              and support the growth of startups and MSMEs in the NER.
             </p>
           </div>
+          <figure className="relative w-full max-w-[640px] mx-auto mb-32">
+                  <img
+                    src={wheel}
+                    alt="Cluster wheel"
+                    className="h-[36] w-[36] drop-shadow-2xl rounded-xl"
+                    loading="eager"
+                    decoding="async"
+                  />
+          </figure>
         </section>
       </Element>
     </>

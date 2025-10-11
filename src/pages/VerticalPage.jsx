@@ -1,34 +1,42 @@
 // src/components/Verticals.jsx
-import React from 'react';
 import { GiPlantSeed, GiBamboo, GiRecycle } from 'react-icons/gi';
+import { useState } from 'react';
 import { FaBrain } from 'react-icons/fa';
 import { Element } from 'react-scroll';
+import VerticalCard from '../components/verticlesData';
 
 const verticals = [
   {
     id: 1,
     title: 'Innovation Hub on Grassroots Technologies',
-    icon: <GiPlantSeed size={28} />,
+    text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." ,
+     icon: <GiPlantSeed size={40} />,
   },
   {
     id: 2,
     title: 'Technology Hub for AI & Semiconductor',
-    icon: <FaBrain size={28} />,
+    text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." ,
+     icon: <FaBrain size={40} />,
   },
   {
     id: 3,
     title: 'CoE for Bamboo Innovation & Skill Development',
-    icon: <GiBamboo size={28} />,
+    text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." , 
+    icon: <GiBamboo size={40} />,
   },
   {
     id: 4,
     title: 'Centre on Biodegradable Plastics & Waste Management',
-    icon: <GiRecycle size={28} />,
+    text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." ,
+     icon: <GiRecycle size={40} />,
   },
 ];
 
-const Verticals = () => (
-  <Element name="verticals"> {/* 👈 scroll target */}
+const Verticals = () => {
+  const [active, setActive] = useState(0);
+
+  return (
+    <Element name="verticals"> {/* 👈 scroll target */}
     <section className="relative py-24 bg-white">
       {/* Geometry / brand overlay */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -78,6 +86,7 @@ const Verticals = () => (
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {verticals.map(({ id, title, icon }) => (
             <div
+              onClick={() => setActive(id)}
               key={id}
               className="group relative rounded-2xl bg-white/90 backdrop-blur-sm
                         border border-gray-100 shadow-sm hover:shadow-xl
@@ -109,9 +118,15 @@ const Verticals = () => (
             </div>
           ))}
         </div>
+
+        { 
+          active !== 0 && 
+          <VerticalCard icon={verticals[active - 1].icon} title={verticals[active - 1].title} text={verticals[active - 1].text}/>
+        }
       </div>
     </section>
   </Element>
-);
+  )
+};
 
 export default Verticals;

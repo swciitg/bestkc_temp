@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 // import { FaLinkedinIn, FaTwitter, FaYoutube } from "react-icons/fa";
 import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import image from "../assets/image.png";
+import image from '../assets/image.png'
+// import departmentOfDevNEImage from '../assets/image.svg'
+import ne_map from '../assets/ne-map.jpg'
+import iitg from '../assets/iitg.png'
 import logo from "../assets/logo.jpg";
 
 const navItems = [
@@ -20,16 +23,18 @@ const navItems = [
   },
   
   {
-    name: "People",
-    link: "#people",
+    name: "Team",
+    link: "/team",
     subItems: [
-      { name: "Coordinators", link: "/coordinators" },
-      { name: "Team Members", link: "/team" },
+      // { name: "Coordinators", link: "/coordinators" },
+      // { name: "Team Members", link: "/team" },
     ],
   },
   { name: "Verticals", link: "/vertical", subItems: [] },
   { name: "Opportunities", link: "/opportunities", subItems: [] },
   { name: "Resources", link: "/resources", subItems: [] },
+  { name: "Activities", link: "/activities", subItems: [] },
+  { name: "The Logo", link: "/logo", subItems: [] },
   { name: "Contact Us", link: "/contact", subItems: [] },
 ];
 
@@ -73,34 +78,42 @@ const Navbar = () => {
   return (
     <header className="w-full font-inter">
       {/* =================== TOP BANNER =================== */}
-      <div className="bg-white py-4 md:py-8">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
+      <div className="bg-white py-4 md:py-8 flex justify-center">
+        <div className="mx-8 px-4 sm:px-6 w-[100] ">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
             <div className="flex-shrink-0">
               <img
                 src={logo}
                 alt="NEST Logo"
-                className="w-24 h-24 sm:w-32 sm:h-32 rounded-lg object-cover ring-1 ring-black/10"
+                className="w-48 h-48 rounded-lg object-cover ring-1 ring-black/10"
               />
             </div>
             <div className="text-center flex-grow">
-              <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 North Eastern Science and Technology (NEST) Cluster
               </h1>
-              <p className="mt-2 italic text-sm sm:text-base text-gray-800">
+              <p className="mt-2 italic text-2xl sm:text-2xl font-bold text-gray-800">
                 Funded by
               </p>
-              <img
-                src={image}
-                alt="Ministry of Development of North Eastern Region"
-                className="mx-auto mt-2 h-8 sm:h-10 md:h-12 object-contain"
-              />
+              {/* <departmentOfDevNEImage/> */}
+             <div className="flex justify-center align-items">
+                <img
+                  src={image}
+                  alt="Ministry of Development of North Eastern Region"
+                  className="mt-2 h-24 object-contain"
+                />
+                <img
+                  src={ne_map}
+                  alt="Map of North-East India"
+                  className="h-32 object-contain"
+                />
+             </div>
             </div>
             <div className="flex-shrink-0">
               <img
-                src="https://www.uxdt.nic.in/wp-content/uploads/2024/06/iit-guwahati-01.jpg?x84154"
+                src={iitg}
                 alt="Indian Institute of Technology Guwahati"
-                className="h-16 sm:h-20 md:h-24 w-auto object-contain"
+                className="w-48 h-48 w-auto object-contain"
               />
             </div>
           </div>
