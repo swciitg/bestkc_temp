@@ -20,7 +20,7 @@ const ContactUs = () => {
     ],
     website: "https://swc.iitg.ac.in/nest/", // swc website
     email: "nest@iitg.ac.in", // updated email
-    phone: "+91 000 000 0000",
+    phone: "+91 70860 50764",
     mapsURL: "https://maps.google.com/?q=IIT+Guwahati,+Assam+781039",
   };
 

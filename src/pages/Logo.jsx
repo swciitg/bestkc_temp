@@ -1,4 +1,11 @@
 import { Circle, Mountain, Leaf, Cpu, Cog, Sun } from "lucide-react";
+import logo from '../assets/logo.jpg'
+import bamboo from '../assets/bamboo.png'
+import circuit from '../assets/circuit.png'
+import sunrise from '../assets/sunrise.png'
+import leaf from '../assets/leaf.png'
+import mountain from '../assets/mountain.png'
+import gear from '../assets/gear.png'
 
 export default function LogoExplanation() {
   return (
@@ -18,20 +25,21 @@ export default function LogoExplanation() {
       </div>
 
       {/* Circular Representation */}
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 p-8 flex items-center justify-center">
+      <div className="min-h-screen p-8 flex items-center justify-center"> 
       <div className="max-w-5xl w-full">
         {/* Core Values - Top Section */}
         <div className="flex justify-center mb-16">
           <div className="relative">
-            <div className="w-72 h-72 rounded-full border-8 border-green-100 flex items-center justify-center bg-gradient-to-br from-white to-green-50 shadow-2xl">
-              <div className="w-72 h-72 bg-white rounded-full shadow-inner flex flex-col items-center justify-center p-6">
-                <Cpu className="text-green-600 w-24 h-24 mb-3" />
-                <h3 className="font-bold text-3xl text-gray-800 mb-3">Core Values</h3>
+            {/* <div className="w-72 h-72 rounded-full border-8 border-green-100 flex items-center justify-center bg-gradient-to-br from-white to-green-50 shadow-2xl"> */}
+              {/* <div className="w-72 h-72 bg-white rounded-full shadow-inner flex flex-col items-center justify-center p-8"> */}
+                {/* <Cpu className="text-green-600 " /> */}
+                <img src={logo} alt="" className="w-72 h-72 mb-2"/>
+                {/* <h3 className="font-bold text-3xl text-gray-800 mb-2">Core Values</h3>
                 <p className="text-lg text-gray-600 text-center leading-relaxed">
                   Innovation · Sustainability<br />Technology · Growth
-                </p>
-              </div>
-            </div>
+                </p> */}
+              {/* </div> */}
+            {/* </div> */}
             {/* Decorative glow effect */}
             <div className="absolute inset-0 rounded-full bg-green-200 opacity-20 blur-2xl -z-10"></div>
           </div>
@@ -43,7 +51,8 @@ export default function LogoExplanation() {
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-yellow-100 hover:border-yellow-300">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
-                <Sun className="text-yellow-600 w-8 h-8" />
+                {/* <Sun className="text-yellow-600 w-8 h-8" /> */}
+                <img src={sunrise} alt="" className="h-8"/>
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-2">Sunrise</h4>
               <p className="text-sm text-gray-600">Symbolizes <strong>North-East India</strong>, where the sun rises first in India.</p>
@@ -55,7 +64,8 @@ export default function LogoExplanation() {
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-blue-100 hover:border-blue-300">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
-                <Cog className="text-blue-600 w-8 h-8" />
+                {/* <Cog className="text-blue-600 w-8 h-8" /> */}
+                <img src={gear} alt="" className="h-12"/>
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-2">Gear</h4>
               <p className="text-sm text-gray-600">Represents <strong>grassroots technology and engineering innovation</strong>.</p>
@@ -67,7 +77,8 @@ export default function LogoExplanation() {
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 hover:border-gray-300">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
-                <Mountain className="text-gray-600 w-8 h-8" />
+                {/* <Mountain className="text-gray-600 w-8 h-8" /> */}
+                <img src={mountain} alt="" className="h-16"/>
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-2">Mountains</h4>
               <p className="text-sm text-gray-600">Depict the <strong>geographical identity</strong> of the North-East region.</p>
@@ -79,7 +90,8 @@ export default function LogoExplanation() {
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-green-100 hover:border-green-300">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
-                <Leaf className="text-green-600 w-8 h-8" />
+                {/* <Leaf className="text-green-600 w-8 h-8" /> */}
+                <img src={leaf} alt="" className="h-16"/>
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-2">Leaf Motif</h4>
               <p className="text-sm text-gray-600">Represents <strong>biodegradable plastics and green technologies</strong>.</p>
@@ -91,7 +103,8 @@ export default function LogoExplanation() {
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-purple-100 hover:border-purple-300">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-4">
-                <Circle className="text-purple-600 w-8 h-8" />
+                {/* <Circle className="text-purple-600 w-8 h-8" /> */}
+                <img src={circuit} alt="" className="h-16"/>
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-2">Circuit Lines</h4>
               <p>Represent <strong>AI, semiconductor, and advanced technology</strong> initiatives.</p>
@@ -103,7 +116,8 @@ export default function LogoExplanation() {
           <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-lime-100 hover:border-lime-300">
             <div className="flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-lime-100 flex items-center justify-center mb-4">
-                <Leaf className="text-lime-600 w-8 h-8" />
+                {/* <Leaf className="text-lime-600 w-8 h-8" /> */}
+                <img src={bamboo} alt="" className="h-16"/>
               </div>
               <h4 className="font-bold text-lg text-gray-800 mb-2">Bamboo</h4>
               <p>Highlights the <strong>Centre of Excellence in Bamboo Technology</strong>.</p>

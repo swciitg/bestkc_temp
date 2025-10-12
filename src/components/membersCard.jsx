@@ -6,14 +6,14 @@
   const [broken, setBroken] = useState(false);
 
   return (
-    <article className="relative bg-white/95 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-xl transition-all duration-200 overflow-hidden border border-gray-100">
+    <article className=" w-[360px] relative bg-white/95 backdrop-blur-sm rounded-xl shadow-sm hover:shadow-xl transition-all duration-200 overflow-hidden border border-gray-100">
       {/* Badge */}
       {/* <span className="absolute top-3 left-3 z-10 px-2 py-0.5 text-xs tracking-wide rounded-full bg-accent/10 text-accent border border-accent/20">
         {member.position}
       </span> */}
 
       {/* Image / Fallback */}
-      <div className="relative aspect-[4/3] bg-gray-100">
+      <div className="relative aspect-[4/4] bg-gray-100">
         {!broken ? (
           <img
             src={member.imageUrl}
@@ -39,7 +39,7 @@
         <h3 className="text-lg font-semibold text-gray-900 font-inter">
           {member.name}
         </h3>
-        <p className="mt-1 text-sm text-gray-600">{member.affiliation}</p>
+        {/* <p className="mt-1 text-lg font-bold text-gray-600">{member.affiliation}</p> */}
 
         {member.website && (
           <Link

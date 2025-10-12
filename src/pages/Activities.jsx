@@ -1,4 +1,4 @@
-import React from 'react';
+import poster from '../assets/poster.jpg'
 
 export default function Activities() {
   return (
@@ -6,6 +6,7 @@ export default function Activities() {
 
       {/* Main Content */}
       <main className="max-w-5xl mx-auto px-6 py-12">
+        <img src={poster} className='mb-16'/>
         {/* Title Section */}
         <div className="bg-white rounded-lg shadow-sm p-8 mb-8">
           <h2 className="text-3xl font-bold text-indigo-900 mb-4 leading-tight">

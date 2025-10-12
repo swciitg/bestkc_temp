@@ -8,6 +8,7 @@ import image from '../assets/image.png'
 import ne_map from '../assets/ne-map.jpg'
 import iitg from '../assets/iitg.png'
 import logo from "../assets/logo.jpg";
+import nec from '../assets/nec.png'
 
 const navItems = [
   { name: "Home", link: "/", subItems: [] },
@@ -16,8 +17,8 @@ const navItems = [
     link: "#about-us",
     subItems: [
       { name: "Cluster Formation", link: "/cluster-formation" },
-      { name: "Cluster Launch", link: "#cluster-launch" },
-      { name: "Section 8 Company Formation", link: "#section-8-formation" },
+      // { name: "Cluster Launch", link: "#cluster-launch" },
+      { name: "Section 8 Company Formation", link: "/cluster-formation#section-8-formation" },
       { name: "Gallery", link: "/gallery"},
     ],
   },
@@ -31,9 +32,10 @@ const navItems = [
     ],
   },
   { name: "Verticals", link: "/vertical", subItems: [] },
-  { name: "Opportunities", link: "/opportunities", subItems: [] },
   { name: "Resources", link: "/resources", subItems: [] },
+  { name: "Courses", link: "/courses", subItems: [] },
   { name: "Activities", link: "/activities", subItems: [] },
+  { name: "Spokes", link: "/spokes", subItems: [] },
   { name: "The Logo", link: "/logo", subItems: [] },
   { name: "Contact Us", link: "/contact", subItems: [] },
 ];
@@ -80,43 +82,56 @@ const Navbar = () => {
       {/* =================== TOP BANNER =================== */}
       <div className="bg-white py-4 md:py-8 flex justify-center">
         <div className="mx-8 px-4 sm:px-6 w-[100] ">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
-            <div className="flex-shrink-0">
-              <img
-                src={logo}
-                alt="NEST Logo"
-                className="w-48 h-48 rounded-lg object-cover ring-1 ring-black/10"
-              />
-            </div>
-            <div className="text-center flex-grow">
-              <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+          <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
                 North Eastern Science and Technology (NEST) Cluster
               </h1>
-              <p className="mt-2 italic text-2xl sm:text-2xl font-bold text-gray-800">
-                Funded by
-              </p>
-              {/* <departmentOfDevNEImage/> */}
-             <div className="flex justify-center align-items">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
+            {/* <div className="flex justify-center items-center"> */}
+                <div className="flex-shrink-0">
                 <img
-                  src={image}
-                  alt="Ministry of Development of North Eastern Region"
-                  className="mt-2 h-24 object-contain"
+                  src={logo}
+                  alt="NEST Logo"
+                  className="w-48 h-48 rounded-lg object-cover ring-1 ring-black/10"
                 />
+              </div>
+              <div className="text-center flex-grow">
+                {/* <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                  North Eastern Science and Technology (NEST) Cluster
+                </h1> */}
+                <p className="mt-2 italic text-2xl sm:text-2xl font-bold text-gray-800">
+                  Established by:
+                </p>
+                {/* <departmentOfDevNEImage/> */}
+              <div className="flex justify-center align-items">
+                  <img
+                    src={image}
+                    alt="Ministry of Development of North Eastern Region"
+                    className="mt-2 h-24 object-contain ml-4"
+                  />
+                  <img
+                    src={ne_map}
+                    alt="Map of North-East India"
+                    className="h-32 object-contain"
+                  />
+              </div>
+
+              <div className="flex flex-col items-center">
+                <p className="italic text-2xl sm:text-2xl font-bold text-gray-800">
+                  Through:
+                </p>
+                  <img src={nec} alt="" className="w-108 mr-32" />
+              </div>
+              
+              </div>
+              <div className="flex-shrink-0">
                 <img
-                  src={ne_map}
-                  alt="Map of North-East India"
-                  className="h-32 object-contain"
+                  src={iitg}
+                  alt="Indian Institute of Technology Guwahati"
+                  className="w-48 h-48 w-auto object-contain"
                 />
-             </div>
+              </div>
             </div>
-            <div className="flex-shrink-0">
-              <img
-                src={iitg}
-                alt="Indian Institute of Technology Guwahati"
-                className="w-48 h-48 w-auto object-contain"
-              />
-            </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
 

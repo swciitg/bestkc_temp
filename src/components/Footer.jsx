@@ -5,10 +5,10 @@ const Footer = () => {
       <div className="bg-[#00899e] py-10">
         <div className="max-w-screen-xl mx-auto px-8 space-y-2 text-sm md:text-base leading-relaxed">
           <p>Section 8 Company</p>
-          {/* <p>Foundation for Bengaluru Science and Technology</p> */}
+          <p>Research Park</p>
           <p>Indian Institute of Technology, Guwahati,</p>
           <p>Guwahati – 781039, Assam, India</p>
-          <p>Phone: + 91 361 258 2278</p>
+          <p>Phone: +91-361-2583500</p>
           {/* <p>CIN : U72100KA2024NPL188452</p> */}
 
           <hr className="border-t border-white/50 my-6" />

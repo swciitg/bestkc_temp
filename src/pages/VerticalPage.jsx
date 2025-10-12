@@ -4,6 +4,23 @@ import { useState } from 'react';
 import { FaBrain } from 'react-icons/fa';
 import { Element } from 'react-scroll';
 import VerticalCard from '../components/verticlesData';
+import v1 from '../assets/v1.png'
+import v21 from '../assets/v21.png'
+import v22 from '../assets/v22.png'
+import v23 from '../assets/v23.png'
+import v24 from '../assets/v24.png'
+import v31 from '../assets/v31.png'
+import v32 from '../assets/v32.png'
+import v33 from '../assets/v33.png'
+import v34 from '../assets/v34.png'
+import v35 from '../assets/v35.png'
+import v36 from '../assets/v36.png'
+import v37 from '../assets/v37.png'
+import v38 from '../assets/v38.png'
+import v41 from '../assets/v41.png'
+import v42 from '../assets/v42.png'
+import v43 from '../assets/v43.png'
+import v44 from '../assets/v44.png'
 
 const verticals = [
   {
@@ -11,24 +28,28 @@ const verticals = [
     title: 'Innovation Hub on Grassroots Technologies',
     text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." ,
      icon: <GiPlantSeed size={40} />,
+     images : [v1]
   },
   {
     id: 2,
     title: 'Technology Hub for AI & Semiconductor',
     text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." ,
      icon: <FaBrain size={40} />,
+     images : [v21, v22, v23, v24]
   },
   {
     id: 3,
     title: 'CoE for Bamboo Innovation & Skill Development',
     text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." , 
     icon: <GiBamboo size={40} />,
+    images : [v31, v32, v33, v34, v35, v36, v37, v38]
   },
   {
     id: 4,
     title: 'Centre on Biodegradable Plastics & Waste Management',
     text : "This centre focuses on developing sustainable biodegradable plastics and innovative waste management solutions. It promotes eco-friendly alternatives to traditional polymers, supports research in material recycling, and encourages industries to adopt green production methods. The initiative aims to reduce environmental pollution and foster circular economy practices through advanced technological interventions." ,
      icon: <GiRecycle size={40} />,
+     images : [v41, v42, v43, v44]
   },
 ];
 
@@ -36,7 +57,7 @@ const Verticals = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <Element name="verticals"> {/* 👈 scroll target */}
+    <Element name="verticals"> {/* scroll target */}
     <section className="relative py-24 bg-white">
       {/* Geometry / brand overlay */}
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -119,11 +140,13 @@ const Verticals = () => {
           ))}
         </div>
 
-        { 
-          active !== 0 && 
-          <VerticalCard icon={verticals[active - 1].icon} title={verticals[active - 1].title} text={verticals[active - 1].text}/>
-        }
       </div>
+        <div className='flex jusitfy-center w-[100vw] px-16'>
+          { 
+          active !== 0 && 
+          <VerticalCard icon={verticals[active - 1].icon} title={verticals[active - 1].title} images={verticals[active - 1].images}/>
+        }
+        </div>
     </section>
   </Element>
   )
