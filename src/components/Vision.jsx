@@ -12,19 +12,19 @@ import {
 
 const VisionMission = () => {
   return (
-    <section className="relative bg-primary py-20 overflow-hidden">
-      {/* Decorative Shapes (reuse your overlay here if you want) */}
-      {/* … */}
-
-      <div className="relative max-w-screen-xl mx-auto px-8 text-white space-y-10">
-        {/* Single combined heading */}
-        <header>
-          <h2 className="text-4xl font-light">Vision &amp; Mission</h2>
+    <section className="relative bg-gray-50 py-20 text-gray-800">
+      <div className="max-w-6xl mx-auto px-6 md:px-10 space-y-14">
+        {/* Heading */}
+        <header className="text-center">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 tracking-tight">
+            Vision &amp; Mission
+          </h2>
+          <div className="mt-4 h-[2px] w-24 bg-blue-500 mx-auto rounded-full"></div>
         </header>
 
-        {/* Vision text */}
-        <div className="space-y-4">
-          <p className="text-xl font-light leading-relaxed">
+        {/* Vision */}
+        <div className="space-y-5 text-lg leading-relaxed text-gray-700 max-w-4xl mx-auto text-center">
+          <p>
             The North Eastern Science &amp; Technology (NEST) Cluster is a
             transformative initiative dedicated to accelerating research,
             innovation, and skill development in the North Eastern Region of
@@ -33,7 +33,7 @@ const VisionMission = () => {
             academic institutions, industries, government agencies, and startups
             across all eight northeastern states.
           </p>
-          <p className="text-xl font-light leading-relaxed">
+          <p>
             Through its state-of-the-art infrastructure, cutting-edge labs, and
             interdisciplinary expertise, the NEST Cluster bridges academia and
             industry to deliver scalable, sustainable, and inclusive
@@ -41,59 +41,54 @@ const VisionMission = () => {
           </p>
         </div>
 
-        {/* Mission points (kept under the same section, no separate heading) */}
-        <ul className="space-y-4 pt-2">
-          <li className="flex items-start space-x-3">
-            <FaUserGraduate className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Skill development of youth of North East region in relevant fields
-              of S&amp;T
-            </span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaLightbulb className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Promote ideation, prototype, technology transfer, startups and
-              commercialization
-            </span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaHandsHelping className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Hand holding with partnering institutions like NITs of NE along
-              with state and centre funded research institutions in providing
-              training
-            </span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaCertificate className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Conducting certification courses in relevant fields that can
-              create job opportunities for the Northeast youth
-            </span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaTools className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Customized technology development through tinkering labs
-            </span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaBalanceScale className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Patenting, transfer of technology and licensing
-            </span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaRocket className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">Start-up incubation</span>
-          </li>
-          <li className="flex items-start space-x-3">
-            <FaHandshake className="mt-1 text-accent" size={24} />
-            <span className="text-xl font-light">
-              Establishing cooperation with industry partners
-            </span>
-          </li>
+        {/* Mission */}
+        <ul className="grid md:grid-cols-2 gap-6 pt-4 max-w-5xl mx-auto">
+          {[
+            {
+              icon: FaUserGraduate,
+              text: "Skill development of youth of North East region in relevant fields of S&T",
+            },
+            {
+              icon: FaLightbulb,
+              text: "Promote ideation, prototype, technology transfer, startups and commercialization",
+            },
+            {
+              icon: FaHandsHelping,
+              text: "Hand holding with partnering institutions like NITs of NE along with state and centre funded research institutions in providing training",
+            },
+            {
+              icon: FaCertificate,
+              text: "Conducting certification courses in relevant fields that can create job opportunities for the Northeast youth",
+            },
+            {
+              icon: FaTools,
+              text: "Customized technology development through tinkering labs",
+            },
+            {
+              icon: FaBalanceScale,
+              text: "Patenting, transfer of technology and licensing",
+            },
+            {
+              icon: FaRocket,
+              text: "Start-up incubation",
+            },
+            {
+              icon: FaHandshake,
+              text: "Establishing cooperation with industry partners",
+            },
+          ].map(({ icon: Icon, text }, idx) => (
+            <li
+              key={idx}
+              className="flex items-start space-x-4 bg-white rounded-xl shadow-sm hover:shadow-md transition p-5 border border-gray-100"
+            >
+              <div className="flex-shrink-0 mt-1 text-blue-500">
+                <Icon size={24} />
+              </div>
+              <span className="text-gray-700 text-base leading-relaxed">
+                {text}
+              </span>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
