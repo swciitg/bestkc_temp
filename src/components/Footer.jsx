@@ -20,7 +20,7 @@ const Footer = () => {
       {/* Darker strip at the end */}
       <div className="bg-[#006b7a] py-3">
         <p className="text-xs md:text-sm tracking-wide">
-          Maintained by <span className="font-semibold">SWC IITG</span>
+          Developed by <span className="font-semibold">Students' Web Committee IITG</span>
         </p>
       </div>
     </footer>
