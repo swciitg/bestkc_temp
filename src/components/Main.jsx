@@ -1,4 +1,4 @@
-import React from "react";
+
 import people from "../assets/people.jpg";
 
 const ClusterLaunch = () => {

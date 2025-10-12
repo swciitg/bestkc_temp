@@ -54,13 +54,13 @@ const ClusterFormation = () => {
 
                 <div className="space-y-6 text-lg leading-relaxed font-light">
                   <p>
-                    Eating enty win hi planed cluster is crucial for efcient functioning and decision-making. 
+                    Establishing a hierarchy within this planned cluster is crucial for effcient functioning and decision-making. 
                     It will help streamline communication, delegation of tasks and resource allocation, ensuring its 
                     smooth functioning and achieving the targeted goals.
                   </p>
 
                   <p>
-                    In this sience & Techmology cluster, the Director, IT Guwahati willake charge as the 
+                    In this science & Technology cluster, the Director, IIT Guwahati will take charge as the 
                     Chairman of this Section 8 Company, which will be run by the Board of Directors and will 
                     be coordinating with DoNER Ministry and the other members of the cluster. The decisions 
                     on important matters will be taken by the Appraisal/ Apex Committee on the recommendation 

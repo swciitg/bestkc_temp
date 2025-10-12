@@ -323,6 +323,11 @@ const CoordinatorPage = () => {
             ))}
           </div>
       </div>
+
+       <div className="w-full flex flex-col items-end justify-end pr-16
+ text-center py-4 mt-10 font-bold text-gray-500 text-lg border-t border-gray-200">
+      More to Add...
+    </div>
     </section>
   );
 };
