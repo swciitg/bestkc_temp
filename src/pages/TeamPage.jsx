@@ -51,7 +51,7 @@ const teamMembers = [
     position: "Faculty",
     affiliation: "Affiliation TBD",
     website: "https://iitg.ac.in/mech/faculty/kpmech/",
-    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4107.original.jpg",
+    imageUrl: "../assets/poonam_kumari.jpeg",
   },
   {
     name: "Dr. Raghvendra Gupta",

@@ -2,6 +2,10 @@
 // import { Link } from "react-router-dom";
 // import CoordinatorCard from "../components/membersCard";
 import CoordinatorCard from "../components/coordinatorCard.jsx";
+import poonam_kumari_dp from "../assets/poonam_kumari.jpeg";
+import sajan_kapil_dp from "../assets/sajan_kapil.jpeg";
+import kumar_komal_dp from "../assets/kumar_komal.jpeg";
+import dora_dp from '../assets/dora.jpeg';
 
 const coordinators = [
   {
@@ -34,7 +38,7 @@ const IHGT = [
     position: "Faculty",
     affiliation: "  ",
     website: "https://iitg.ac.in/mech/faculty/sajankapil/",
-    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4279.original.jpg",
+    imageUrl: `${sajan_kapil_dp}`,
   },
   {
     name: "Dr. Vivek Padmanabha (PI)",
@@ -114,21 +118,21 @@ const BISD = [
     position: "Faculty",
     affiliation: "  ",
     website: "https://iitg.ac.in/mech/faculty/kpmech/",
-    imageUrl: "https://iitg.ac.in/mech/media/images/CET_4107.original.jpg",
+    imageUrl: `${poonam_kumari_dp}`,
   },
   {
     name: "Dr. Ujendra Kr. Komal",
     position: "Faculty",
     affiliation: "  ",
     website: "https://www.iitg.ac.in/mech/faculty/ukk/",
-    imageUrl: "https://www.iitg.ac.in/mech/media/images/Picture_5.original.png",
+    imageUrl: `${kumar_komal_dp}`,
   },
   {
     name: "Dr. Tarkes Dora Pallicitiy",
     position: "Faculty",
     affiliation: "  ",
     website: "https://iitg.ac.in/mech/faculty/tarkes/",
-    imageUrl: "https://iitg.ac.in/mech/media/images/tarkes_300x400_wU9rRu6.original.jpg",
+    imageUrl: `${dora_dp}`,
   },
 ]
 
