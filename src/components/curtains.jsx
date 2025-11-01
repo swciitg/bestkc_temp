@@ -115,7 +115,7 @@ export default function CurtainAnimation({setShowCurtain}) {
             onClick={handleEnter}
             className="px-12 py-4 text-lg font-semibold text-amber-800 bg-white border-2 border-amber-300 rounded-full shadow-xl hover:bg-amber-50 hover:border-amber-400 hover:scale-105 transition-all duration-300 ease-out"
           >
-            Enter
+            Inaugurate
           </button>
         </div>
       )}
