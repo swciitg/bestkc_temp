@@ -156,7 +156,9 @@ export default function CurtainAnimation({setShowCurtain}) {
             <div className="text-3xl font-bold leading-tight">
               North Eastern Science and Technology (NEST) Cluster
             </div>
-            
+            <div className="text-lg font-semibold">
+              Website
+            </div>
             {/* Second div - medium size */}
             <div className="text-lg font-semibold">
               Inaugurated by

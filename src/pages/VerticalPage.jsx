@@ -111,7 +111,7 @@ const Verticals = () => {
               key={id}
               className="group relative rounded-2xl bg-white/90 backdrop-blur-sm
                         border border-gray-100 shadow-sm hover:shadow-xl
-                        transition-all duration-300 overflow-hidden p-6"
+                        transition-all duration-300 overflow-hidden p-6 cursor-pointer"
             >
               {/* Accent bar */}
               <span className="absolute inset-x-0 top-0 h-1.5 bg-accent" />
