@@ -147,13 +147,34 @@ export default function CurtainAnimation({setShowCurtain}) {
       {/* Enter Button */}
       {!isOpen && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
-          <button
-            onClick={handleEnter}
-            className="px-12 py-4 text-lg font-semibold text-amber-800 bg-white border-2 border-amber-300 rounded-full shadow-xl hover:bg-amber-50 hover:border-amber-400 hover:scale-105 transition-all duration-300 ease-out"
-          >
-            Inaugurated by
-          </button>
-        </div>
+        <button
+          onClick={handleEnter}
+          className="px-16 py-12 text-lg font-semibold text-amber-800 bg-white border-2 border-amber-300 rounded-full shadow-xl hover:bg-amber-50 hover:border-amber-400 hover:scale-105 transition-all duration-300 ease-out max-w-xl"
+        >
+          <div className="space-y-2 text-center">
+            {/* First div - largest, sets the width */}
+            <div className="text-3xl font-bold leading-tight">
+              North Eastern Science and Technology (NEST) Cluster
+            </div>
+            
+            {/* Second div - medium size */}
+            <div className="text-lg font-semibold">
+              Inaugurated by
+            </div>
+            
+            {/* Third div - slightly smaller */}
+            <div className="text-[28px] font-bold">
+              Shri Jyotiraditya M. Scindia
+            </div>
+            
+            {/* Fourth div - smallest, wraps naturally */}
+            <div className="text-lg font-semibold leading-snug px-8">
+              Union Minister of Communication and Minister of Development of North Eastern Region, Govt. of India
+            </div>
+          </div>
+        </button>
+      </div>
+      // </div>
       )}
 
       {/* Keyframes for animations */}
