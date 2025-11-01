@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function CurtainAnimation({setShowCurtain}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [confetti, setConfetti] = useState([]);
 
   const handleEnter = () => {
     setIsOpen(true);
+    // Generate confetti
+    generateConfetti();
     // Hide component completely after animation finishes
     setTimeout(() => {
       setIsHidden(true);
@@ -13,10 +16,40 @@ export default function CurtainAnimation({setShowCurtain}) {
     }, 3500);
   };
 
+  const generateConfetti = () => {
+    const pieces = [];
+    for (let i = 0; i < 100; i++) {
+      pieces.push({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 0.5,
+        duration: 2 + Math.random() * 2,
+        rotation: Math.random() * 360,
+        color: ['bg-red-600', 'bg-yellow-600', 'bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-pink-600'][Math.floor(Math.random() * 6)],
+        shape: Math.random() > 0.5 ? 'rounded-full' : 'rounded-sm'
+      });
+    }
+    setConfetti(pieces);
+  };
+
   if (isHidden) return null;
 
   return (
     <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
+      {/* Confetti */}
+      {isOpen && confetti.map((piece) => (
+        <div
+          key={piece.id}
+          className={`absolute w-3 h-3 ${piece.color} ${piece.shape} animate-fall`}
+          style={{
+            left: `${piece.left}%`,
+            top: '-20px',
+            animation: `fall ${piece.duration}s linear ${piece.delay}s forwards`,
+            transform: `rotate(${piece.rotation}deg)`
+          }}
+        ></div>
+      ))}
+
       {/* Left Curtain */}
       <div
         className={`absolute top-0 left-0 h-full w-1/2 bg-gradient-to-r from-red-800 via-red-600 to-red-700 shadow-2xl transition-all duration-[3000ms] ${
@@ -86,6 +119,16 @@ export default function CurtainAnimation({setShowCurtain}) {
           </button>
         </div>
       )}
+
+      {/* Keyframes for confetti animation */}
+      <style jsx>{`
+        @keyframes fall {
+          to {
+            transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+          }
+        }
+      `}</style>
     </div>
   );
 }
