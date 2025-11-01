@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function CurtainAnimation({setShowCurtain}) {
   const [isOpen, setIsOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [confetti, setConfetti] = useState([]);
+  const [flowers, setFlowers] = useState([]);
 
   const handleEnter = () => {
     setIsOpen(true);
-    // Generate confetti
+    // Generate confetti and flowers
     generateConfetti();
+    generateFlowers();
     // Hide component completely after animation finishes
     setTimeout(() => {
       setIsHidden(true);
@@ -18,18 +20,35 @@ export default function CurtainAnimation({setShowCurtain}) {
 
   const generateConfetti = () => {
     const pieces = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 80; i++) {
       pieces.push({
         id: i,
         left: Math.random() * 100,
         delay: Math.random() * 0.5,
         duration: 2 + Math.random() * 2,
         rotation: Math.random() * 360,
-        color: ['bg-red-600', 'bg-yellow-600', 'bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-pink-600'][Math.floor(Math.random() * 6)],
+        color: ['bg-red-500', 'bg-yellow-400', 'bg-blue-500', 'bg-green-500', 'bg-purple-500', 'bg-pink-500'][Math.floor(Math.random() * 6)],
         shape: Math.random() > 0.5 ? 'rounded-full' : 'rounded-sm'
       });
     }
     setConfetti(pieces);
+  };
+
+  const generateFlowers = () => {
+    const flowerPieces = [];
+    const flowerTypes = ['🌸', '🌸', '🌸', '🌸', '🌸', '🌸', '🌸', '🌸'];
+    for (let i = 0; i < 30; i++) {
+      flowerPieces.push({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 0.7,
+        duration: 2.5 + Math.random() * 2,
+        rotation: Math.random() * 360,
+        flower: flowerTypes[Math.floor(Math.random() * flowerTypes.length)],
+        swayDistance: 20 + Math.random() * 40
+      });
+    }
+    setFlowers(flowerPieces);
   };
 
   if (isHidden) return null;
@@ -39,8 +58,8 @@ export default function CurtainAnimation({setShowCurtain}) {
       {/* Confetti */}
       {isOpen && confetti.map((piece) => (
         <div
-          key={piece.id}
-          className={`absolute w-3 h-3 ${piece.color} ${piece.shape} animate-fall`}
+          key={`confetti-${piece.id}`}
+          className={`absolute w-3 h-3 ${piece.color} ${piece.shape}`}
           style={{
             left: `${piece.left}%`,
             top: '-20px',
@@ -48,6 +67,23 @@ export default function CurtainAnimation({setShowCurtain}) {
             transform: `rotate(${piece.rotation}deg)`
           }}
         ></div>
+      ))}
+
+      {/* Flowers */}
+      {isOpen && flowers.map((flower) => (
+        <div
+          key={`flower-${flower.id}`}
+          className="absolute text-2xl"
+          style={{
+            left: `${flower.left}%`,
+            top: '-40px',
+            animation: `fallAndSway ${flower.duration}s ease-in ${flower.delay}s forwards`,
+            '--sway-distance': `${flower.swayDistance}px`,
+            transform: `rotate(${flower.rotation}deg)`
+          }}
+        >
+          {flower.flower}
+        </div>
       ))}
 
       {/* Left Curtain */}
@@ -120,11 +156,25 @@ export default function CurtainAnimation({setShowCurtain}) {
         </div>
       )}
 
-      {/* Keyframes for confetti animation */}
+      {/* Keyframes for animations */}
       <style jsx>{`
         @keyframes fall {
           to {
             transform: translateY(100vh) rotate(720deg);
+            opacity: 0;
+          }
+        }
+
+        @keyframes fallAndSway {
+          0% {
+            transform: translateY(0) translateX(0) rotate(0deg);
+            opacity: 1;
+          }
+          50% {
+            transform: translateY(50vh) translateX(var(--sway-distance)) rotate(180deg);
+          }
+          100% {
+            transform: translateY(100vh) translateX(0) rotate(360deg);
             opacity: 0;
           }
         }
