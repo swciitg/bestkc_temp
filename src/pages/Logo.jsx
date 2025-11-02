@@ -33,7 +33,7 @@ export default function LogoExplanation() {
             {/* <div className="w-72 h-72 rounded-full border-8 border-green-100 flex items-center justify-center bg-gradient-to-br from-white to-green-50 shadow-2xl"> */}
               {/* <div className="w-72 h-72 bg-white rounded-full shadow-inner flex flex-col items-center justify-center p-8"> */}
                 {/* <Cpu className="text-green-600 " /> */}
-                <img src={logo} alt="" className="w-72 h-72 mb-2"/>
+                <img src={logo} alt="" className="w-[300px] h-72 mb-2"/>
                 {/* <h3 className="font-bold text-3xl text-gray-800 mb-2">Core Values</h3>
                 <p className="text-lg text-gray-600 text-center leading-relaxed">
                   Innovation · Sustainability<br />Technology · Growth
