@@ -171,7 +171,7 @@ export default function CurtainAnimation({setShowCurtain}) {
             
             {/* Fourth div - smallest, wraps naturally */}
             <div className="text-lg font-semibold leading-snug px-8">
-              Union Minister of Communication and Minister of Development of North Eastern Region, Govt. of India
+              Union Minister of Communications and Minister of Development of North Eastern Region, Govt. of India
             </div>
           </div>
         </button>
