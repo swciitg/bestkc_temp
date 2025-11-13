@@ -11,14 +11,14 @@ const ContactUs = () => {
   const org = {
     title: "North Eastern Science & Technology (NEST) Cluster",
     addressLines: [
-      "NEST Cluster Office",
-      "Indian Institute of Technology Guwahati",
-      "Amingaon, Guwahati, Assam – 781039",
-      "India",
+      "Office Room No. 04,",
+      "Ground Floor, Research Park,",
+      "Indian Institute of Technology Guwahati,",
+      "Amingaon, Guwahati, Assam, India – 781039",
     ],
-    website: "https://swc.iitg.ac.in/nest/",
+    website: "https://iitg.ac.in/nest/",
     email: "nest@iitg.ac.in",
-    phone: "+91 70860 50764",
+    phone: "+91-361-2914069",
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);

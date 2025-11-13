@@ -8,7 +8,7 @@ const Footer = () => {
           <p>Research Park</p>
           <p>Indian Institute of Technology, Guwahati,</p>
           <p>Guwahati – 781039, Assam, India</p>
-          <p>Phone: +91-361-2583500</p>
+          <p>Phone: +91-361-2914069</p>
           {/* <p>CIN : U72100KA2024NPL188452</p> */}
 
           <hr className="border-t border-white/50 my-6" />
@@ -20,7 +20,8 @@ const Footer = () => {
       {/* Darker strip at the end */}
       <div className="bg-[#006b7a] py-3">
         <p className="text-xs md:text-sm tracking-wide">
-          Developed by <span className="font-semibold">Students' Web Committee IITG</span>
+          Developed by{" "}
+          <span className="font-semibold">Students' Web Committee IITG</span>
         </p>
       </div>
     </footer>

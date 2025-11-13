@@ -1,55 +1,66 @@
 // src/components/EnhancedCarousel.jsx
-import React, { useRef, useState, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import innovation from '../assets/innovation.png'
-import tech from '../assets/tech.webp'
-import local from '../assets/local.png'
-import ai from '../assets/ai.png'
-import green from '../assets/green.png'
-import plastic from '../assets/plastic.png'
+import React, { useRef, useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import innovation from "../assets/innovation.png";
+import tech from "../assets/tech.webp";
+import local from "../assets/local.png";
+import ai from "../assets/ai.png";
+import green from "../assets/green.png";
+import plastic from "../assets/plastic.png";
+import image1 from "../assets/1.jpg";
+import image2 from "../assets/2.jpg";
+import image3 from "../assets/3.jpg";
 
 const slides = [
   {
     id: 1,
-    heading: 'Uniting Northeast for a Tech-Driven Tomorrow',
-    text: 'A dynamic ecosystem to empower research, innovation, and entrepreneurship across the North Eastern region.',
-    bgColor: 'bg-[#4a3480]',
-    image : tech
+    bgColor: "bg-[#1e1747]",
+    image: image1,
   },
   {
     id: 2,
-    heading: 'From Ideas to Impact – Fueling Innovation, Skills & Startups',
-    text: 'NEST Cluster bridges academia, industry, and society to transform knowledge into scalable solutions for regional development.',
-    bgColor: 'bg-[#2e2363]',
-    image : innovation
+    bgColor: "bg-[#1e1747]",
+    image: image2,
   },
   {
     id: 3,
-    heading: 'Nurturing Local Ideas into Lifelong Solutions',
-    text: 'Empowering rural innovation through tinkering labs, prototyping, and inclusive technology for real-world challenges.',
-    bgColor: 'bg-[#1e1747]',
-    image : local
+    bgColor: "bg-[#1e1747]",
+    image: image3,
   },
   {
     id: 4,
-    heading: 'Shaping the Future with AI, Data Science & Chip Technologies',
-    text: 'Advanced training, R&D, and hardware innovation for a digitally empowered Northeast.',
-    bgColor: 'bg-[#4a3480]',
-    image : ai
+    heading: "Uniting Northeast for a Tech-Driven Tomorrow",
+    text: "A dynamic ecosystem to empower research, innovation, and entrepreneurship across the North Eastern region.",
+    bgColor: "bg-[#4a3480]",
+    image: tech,
   },
   {
     id: 5,
-    heading: 'Green Gold for a Greener Economy',
-    text: 'Unlocking the potential of bamboo for sustainable products, rural livelihood, and entrepreneurial growth.',
-    bgColor: 'bg-[#2e2363]',
-    image : green
+    heading: "From Ideas to Impact – Fueling Innovation, Skills & Startups",
+    text: "NEST Cluster bridges academia, industry, and society to transform knowledge into scalable solutions for regional development.",
+    bgColor: "bg-[#2e2363]",
+    image: innovation,
   },
   {
     id: 6,
-    heading: 'Innovating for a Plastic-Free, Sustainable Northeast',
-    text: 'Pioneering bioplastics, microplastic awareness, and waste-to-value technologies for environmental transformation.',
-    bgColor: 'bg-[#1e1747]',
-    image : plastic
+    heading: "Nurturing Local Ideas into Lifelong Solutions",
+    text: "Empowering rural innovation through tinkering labs, prototyping, and inclusive technology for real-world challenges.",
+    bgColor: "bg-[#1e1747]",
+    image: local,
+  },
+  {
+    id: 7,
+    heading: "Shaping the Future with AI, Data Science & Chip Technologies",
+    text: "Advanced training, R&D, and hardware innovation for a digitally empowered Northeast.",
+    bgColor: "bg-[#4a3480]",
+    image: ai,
+  },
+  {
+    id: 8,
+    heading: "Green Gold for a Greener Economy",
+    text: "Unlocking the potential of bamboo for sustainable products, rural livelihood, and entrepreneurial growth.",
+    bgColor: "bg-[#2e2363]",
+    image: green,
   },
 ];
 
@@ -64,7 +75,7 @@ const EnhancedCarousel = () => {
   const scrollTo = (index) => {
     if (!containerRef.current) return;
     const width = containerRef.current.clientWidth; // clientWidth is safer than offsetWidth
-    containerRef.current.scrollTo({ left: width * index, behavior: 'smooth' });
+    containerRef.current.scrollTo({ left: width * index, behavior: "smooth" });
     setCurrent(index);
   };
 
@@ -74,7 +85,9 @@ const EnhancedCarousel = () => {
 
   // Autoplay (pauses on hover or when user prefers reduced motion)
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
     if (paused || prefersReduced) return;
 
     const timer = setInterval(() => {
@@ -99,11 +112,11 @@ const EnhancedCarousel = () => {
   // Keyboard navigation
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'ArrowRight') next();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   });
 
   // Touch / swipe support
@@ -135,47 +148,57 @@ const EnhancedCarousel = () => {
         aria-roledescription="carousel"
         aria-live="polite"
       >
-        {slides.map(({ id, heading, text, bgColor , image}, idx) => (
+        {slides.map(({ id, heading, text, bgColor, image }, idx) => (
           <section
             key={id}
             className={`relative min-w-full snap-center flex-shrink-0 ${bgColor}`}
             role="group"
             aria-label={`Slide ${idx + 1} of ${slideCount}`}
           >
-            {/* Dark overlay for legibility */}
-            <div className="absolute inset-0 bg-black/25" />
+            {/* ✅ Special full-cover layout only for image1 (id === 6) */}
+            {id === 1 || id === 2 || id === 3 ? (
+              <>
+                {/* Full background image */}
+                <img
+                  src={image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                {/* Optional dark overlay for readability */}
+                <div className="absolute inset-0 bg-black/40" />
 
-            {/* Content panel */}
-              <div
-              className="
-                relative h-full max-w-5xl
-                mx-auto px-2 sm:px-4 lg:px-10
-                flex  justify-center items-center
-              "
-              >
-                <div
-                className='flex flex-col justify-center al
-                text-white'
-                >
-                  <h3
-                  className="
-                    font-semibold leading-snug mb-3
-                    text-[clamp(20px,4.5vw,42px)]
-                  "
-                >
-                  {heading}
+                {/* Optional centered caption or heading */}
+                <div className="relative h-full flex flex-col justify-center items-center text-center text-white px-6">
+                  <h3 className="font-semibold leading-snug mb-3 text-[clamp(20px,4.5vw,42px)]">
+                    North Eastern Science and Technology (NEST) Cluster
                   </h3>
-                  <p className="text-white/90 leading-relaxed text-[clamp(14px,2.2vw,18px)] max-w-3xl">
-                    {text}
+                  <p className="text-white/90 max-w-2xl text-[clamp(14px,2.2vw,18px)]">
+                    Empowering research, innovation, and entrepreneurship across
+                    the North Eastern region.
                   </p>
                 </div>
-                <img 
-                src={image}
-                className='w-36 h-36 '
-                />
-              </div>
-              
-
+              </>
+            ) : (
+              /* 🧩 Default layout for all other slides */
+              <>
+                <div className="absolute inset-0 bg-black/25" />
+                <div className="relative h-full max-w-5xl mx-auto px-2 sm:px-4 lg:px-10 flex justify-center items-center">
+                  <div className="flex flex-col justify-center text-white">
+                    <h3 className="font-semibold leading-snug mb-3 text-[clamp(20px,4.5vw,42px)]">
+                      {heading}
+                    </h3>
+                    <p className="text-white/90 leading-relaxed text-[clamp(14px,2.2vw,18px)] max-w-3xl">
+                      {text}
+                    </p>
+                  </div>
+                  <img
+                    src={image}
+                    alt=""
+                    className="w-36 h-36 object-contain"
+                  />
+                </div>
+              </>
+            )}
           </section>
         ))}
       </div>
@@ -219,7 +242,11 @@ const EnhancedCarousel = () => {
             className={`
               transition
               rounded-full
-              ${current === idx ? 'bg-white w-3 h-3 sm:w-3.5 sm:h-3.5' : 'bg-white/60 w-2.5 h-2.5 sm:w-3 sm:h-3'}
+              ${
+                current === idx
+                  ? "bg-white w-3 h-3 sm:w-3.5 sm:h-3.5"
+                  : "bg-white/60 w-2.5 h-2.5 sm:w-3 sm:h-3"
+              }
             `}
           />
         ))}

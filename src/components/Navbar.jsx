@@ -3,12 +3,12 @@ import { useState } from "react";
 import { HiOutlineMenu, HiX, HiChevronDown } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
-import image from '../assets/image.png'
+import image from "../assets/image.png";
 // import departmentOfDevNEImage from '../assets/image.svg'
-import ne_map from '../assets/ne-map.jpg'
-import iitg from '../assets/iitg.png'
+import ne_map from "../assets/ne-map.jpg";
+import iitg from "../assets/iitg.png";
 import logo from "../assets/logo.jpg";
-import nec from '../assets/nec.png'
+import nec from "../assets/nec.png";
 
 const navItems = [
   { name: "Home", link: "/", subItems: [] },
@@ -18,23 +18,27 @@ const navItems = [
     subItems: [
       { name: "Cluster Formation", link: "/cluster-formation" },
       // { name: "Cluster Launch", link: "#cluster-launch" },
-      { name: "Section 8 Company Formation", link: "/cluster-formation#section-8-formation" },
-      { name: "Gallery", link: "/gallery"},
+      {
+        name: "Section 8 Company Formation",
+        link: "/cluster-formation#section-8-formation",
+      },
+      { name: "Cluster Activities", link: "/gallery" },
     ],
   },
-  
+
   {
-    name: "Team",
-    link: "/team",
+    name: "People",
+    link: "#team",
     subItems: [
-      // { name: "Coordinators", link: "/coordinators" },
-      // { name: "Team Members", link: "/team" },
+      { name: "Leadership", link: "/team" },
+      { name: "Implementation Team", link: "/team2" },
+      { name: "Functional Team", link: "/team3" },
     ],
   },
   { name: "Verticals", link: "/vertical", subItems: [] },
   { name: "Resources", link: "/resources", subItems: [] },
   { name: "Courses", link: "/courses", subItems: [] },
-  { name: "Activities", link: "/activities", subItems: [] },
+  { name: "Gallery", link: "/activities", subItems: [] },
   { name: "Spokes", link: "/spokes", subItems: [] },
   { name: "The Logo", link: "/logo", subItems: [] },
   { name: "Contact Us", link: "/contact", subItems: [] },
@@ -80,65 +84,91 @@ const Navbar = () => {
   return (
     <header className="w-full font-inter">
       {/* =================== TOP BANNER =================== */}
-      <div className="bg-white py-4 md:py-8 flex justify-center">
-        <div className="mx-8 px-4 sm:px-6 w-[100] ">
-          <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                North Eastern Science and Technology (NEST) Cluster
-              </h1>
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
-            {/* <div className="flex justify-center items-center"> */}
-                <div className="flex-shrink-0">
-                <img
-                  src={logo}
-                  alt="NEST Logo"
-                  className="w-48 h-48 rounded-lg object-cover ring-1 ring-black/10"
-                />
-              </div>
-              <div className="text-center flex-grow">
-                {/* <h1 className="font-extrabold text-gray-900 tracking-tight leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                  North Eastern Science and Technology (NEST) Cluster
-                </h1> */}
-                <p className="mt-2 italic text-2xl sm:text-2xl font-bold text-gray-800">
-                  Established by:
-                </p>
-                {/* <departmentOfDevNEImage/> */}
-              <div className="flex justify-center align-items">
+      <div className="bg-white py-2 flex justify-center">
+        <div className="w-full max-w-7xl px-4 sm:px-6">
+          {/* Title */}
+          <h1 className="font-extrabold text-red-900 tracking-tight leading-tight text-center text-xl sm:text-2xl md:text-4xl lg:text-5xl mt-2 mb-1">
+            North Eastern Science and Technology Cluster
+          </h1>
+
+          {/* Subtitle */}
+          <div className="flex flex-wrap justify-center text-center leading-tight">
+            <span className="font-bold italic text-gray-800 text-base sm:text-lg md:text-xl lg:text-2xl">
+              for promoting
+            </span>
+            <span className="font-bold text-gray-800 tracking-tight text-base sm:text-lg md:text-xl lg:text-2xl ml-2">
+              Research, Innovation & Skill Development
+            </span>
+          </div>
+
+          {/* Main Section */}
+          <div className="flex flex-col md:flex-row items-center justify-between md:space-x-6 mt-1">
+            {/* Left Logo */}
+            <div className="flex-shrink-0 flex justify-center md:justify-start">
+              <img
+                src={logo}
+                alt="NEST Logo"
+                className="w-28 sm:w-40 md:w-52 lg:w-60 aspect-square rounded-lg object-contain"
+              />
+            </div>
+
+            {/* Center Section */}
+            <div className="text-center flex-grow mt-2 md:mt-0 flex flex-col items-center">
+              <p className="italic text-lg sm:text-xl font-bold text-gray-800 mt-4 mb-[-2%]">
+                Established by:
+              </p>
+
+              {/* Container that allows offset control */}
+              <div className="relative inline-block">
+                {/* Top Row: Ministry + Map */}
+                <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 md:gap-4">
                   <img
                     src={image}
                     alt="Ministry of Development of North Eastern Region"
-                    className="mt-2 h-24 object-contain ml-4"
+                    className="h-12 sm:h-16 md:h-20 object-contain"
+                    id="ministry-logo"
                   />
                   <img
                     src={ne_map}
                     alt="Map of North-East India"
-                    className="h-32 object-contain"
+                    className="h-16 sm:h-24 md:h-28 object-contain"
                   />
-              </div>
+                </div>
 
-              <div className="flex flex-col items-center">
-                <p className="italic text-2xl sm:text-2xl font-bold text-gray-800">
-                  Through:
-                </p>
-                  <img src={nec} alt="" className="w-108 mr-32" />
-              </div>
-              
-              </div>
-              <div className="flex-shrink-0">
-                <img
-                  src={iitg}
-                  alt="Indian Institute of Technology Guwahati"
-                  className="w-48 h-48 w-auto object-contain"
-                />
+                {/* Through + NEC */}
+                <div className="mt-[-2%]">
+                  <p className="italic text-lg sm:text-xl font-bold text-gray-800">
+                    Through:
+                  </p>
+
+                  {/* NEC shifted left to start exactly where first top image starts */}
+                  <div className="flex justify-center relative">
+                    <img
+                      src={nec}
+                      alt="NEC Logo"
+                      className="h-12 sm:h-16 md:h-20 object-contain relative lg:left-[-14%]"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-          {/* </div> */}
+
+            {/* Right Logo */}
+            <div className="flex-shrink-0 flex justify-center md:justify-end mt-2 md:mt-0">
+              <img
+                src={iitg}
+                alt="Indian Institute of Technology Guwahati"
+                className="w-28 sm:w-40 md:w-52 lg:w-60 object-contain"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* =================== MAIN NAV =================== */}
-      <nav className="bg-primary text-white">
+      <nav className="bg-primary text-white mt-4">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
-          <div className="h-14 md:h-16 flex items-center justify-center">
+          <div className="h-10 md:h-12 flex items-center justify-center">
             {/* Hamburger (mobile) */}
             <button
               onClick={() => setMobileOpen((v) => !v)}

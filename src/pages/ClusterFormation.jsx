@@ -1,4 +1,5 @@
 import React from "react";
+
 import wheel from "../assets/about.png";
 import cluster from "../assets/cluster.png";
 import { Element } from "react-scroll";
@@ -10,14 +11,14 @@ const ClusterFormation = () => {
         {/* ---------- Top Banner (About Us) ---------- */}
         <Element name="about-us">
           <header className="text-center mt-24 mb-12">
-          <h2 className="text-5xl md:text-5xl font-playfair text-gray-900">
-            About Us
-          </h2>
-          {/* <p className="mt-2 text-base text-gray-600">
+            <h2 className="text-5xl md:text-5xl font-playfair text-gray-900">
+              About Us
+            </h2>
+            {/* <p className="mt-2 text-base text-gray-600">
             Our Esteemed Coordinators
           </p> */}
-          <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
-        </header>
+            <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
+          </header>
         </Element>
 
         {/* ---------- Cluster Formation Section ---------- */}
@@ -42,15 +43,16 @@ const ClusterFormation = () => {
                   <p>
                     In this Science &amp; Technology Cluster, the Director, IIT
                     Guwahati, will take charge as the Chairman of this Section 8
-                    Company, which will be run by the Board of Directors and will
-                    coordinate with the DoNER Ministry and other members of the
-                    cluster. The decisions on important matters will be taken by
-                    the Appraisal/Apex Committee on the recommendation of the
-                    Ministry and the Chairman. The Program Director position will
-                    be held by Prof. Vimal Katiyar, Dept. of Chemical Engineering,
-                    who will be overall responsible for the entire functioning of
-                    the cluster, including coordination with the CEO, reporting to
-                    the Board, and overseeing daily activities.
+                    Company, which will be run by the Board of Directors and
+                    will coordinate with the DoNER Ministry and other members of
+                    the cluster. The decisions on important matters will be
+                    taken by the Appraisal/Apex Committee on the recommendation
+                    of the Ministry and the Chairman. The Program Director
+                    position will be held by Prof. Vimal Katiyar, Dept. of
+                    Chemical Engineering, who will be overall responsible for
+                    the entire functioning of the cluster, including
+                    coordination with the CEO, reporting to the Board, and
+                    overseeing daily activities.
                   </p>
                 </div>
               </div>
@@ -88,9 +90,9 @@ const ClusterFormation = () => {
 
               <p>
                 Operating as a not-for-profit entity, the NEST Cluster will
-                function in a self-sustainable mode within five years, leveraging
-                the scientific and technological expertise available at IIT
-                Guwahati and other premier institutions of the region.
+                function in a self-sustainable mode within five years,
+                leveraging the scientific and technological expertise available
+                at IIT Guwahati and other premier institutions of the region.
               </p>
 
               <p>
@@ -98,14 +100,14 @@ const ClusterFormation = () => {
                 entrepreneurs, and industry experts to collaborate on
                 cutting-edge technologies such as Semiconductors, Artificial
                 Intelligence, Community-based Grassroots Innovations,
-                Bamboo-based Technologies, Product Development, and Biodegradable
-                Plastics.
+                Bamboo-based Technologies, Product Development, and
+                Biodegradable Plastics.
               </p>
 
               <p>
                 Through its state-of-the-art laboratories, tinkering and
-                incubation facilities, and networking platforms, the Cluster will
-                foster innovation, provide training and certification, and
+                incubation facilities, and networking platforms, the Cluster
+                will foster innovation, provide training and certification, and
                 support the growth of startups and MSMEs in the NER.
               </p>
             </div>
