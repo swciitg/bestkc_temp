@@ -22,7 +22,7 @@ import Spokes from "./pages/Spokes.jsx";
 const App = () => {
   const [showCurtain, setShowCurtain] = useState(true);
   return (
-    <BrowserRouter basename={`/nest`}>
+    <BrowserRouter basename={`/nest1`}>
       {showCurtain && <CurtainAnimation setShowCurtain={setShowCurtain} />}
       <div className="overflow-x-hidden">
         <Navbar />
