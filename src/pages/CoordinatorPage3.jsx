@@ -90,7 +90,7 @@ const CoordinatorPage3 = () => {
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Header */}
 
-        <div className="mx-auto max-w-4xl grid grid-cols-3 sm:grid-cols-3 gap-8">
+        <div className="mx-auto max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-8">
           {coordinators.map((c, idx) => (
             <div
               key={c.name}

@@ -31,8 +31,8 @@ const navItems = [
     link: "#team",
     subItems: [
       { name: "Leadership", link: "/team" },
-      { name: "Implementation Team", link: "/team2" },
-      { name: "Functional Team", link: "/team3" },
+      { name: "Scientific Team", link: "/team2" },
+      { name: "Executive Team", link: "/team3" },
     ],
   },
   { name: "Verticals", link: "/vertical", subItems: [] },
