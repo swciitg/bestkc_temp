@@ -18,10 +18,6 @@ const navItems = [
     subItems: [
       { name: "Cluster Formation", link: "/cluster-formation" },
       // { name: "Cluster Launch", link: "#cluster-launch" },
-      {
-        name: "Section 8 Company Formation",
-        link: "/cluster-formation#section-8-formation",
-      },
       { name: "Cluster Activities", link: "/gallery" },
     ],
   },
