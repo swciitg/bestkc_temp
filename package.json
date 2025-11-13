@@ -1,7 +1,7 @@
 {
   "name": "bestkc_temp",
   "version": "0.1.0",
-  "homepage": "/nest1",
+  "homepage": "/nest",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
