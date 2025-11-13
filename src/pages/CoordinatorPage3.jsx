@@ -38,19 +38,19 @@ const coordinators = [
   {
     name: "Mrinal Kumar",
     position: "Coordinator",
-    affiliation: "Technical Associate",
+    affiliation: "Technical Attendant",
     imageUrl: `${img2}`,
   },
   {
     name: "Debeshree Daimary",
     position: "Coordinator",
-    affiliation: "Office Associate",
+    affiliation: "Office Attendant",
     imageUrl: `${img5}`,
   },
   {
     name: "Rumi Yadav",
     position: "Coordinator",
-    affiliation: "Office Associate",
+    affiliation: "Office Attendant",
     imageUrl: `${img4}`,
   },
 ];

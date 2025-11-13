@@ -280,7 +280,7 @@ const CoordinatorPage2 = () => {
             <CoordinatorCard key={m.name} member={m} />
           ))}
         </div>
-        <div className="flex justify-center mt-7 mr-7">
+        <div className="flex flex-col sm:flex-row justify-center mt-7 mr-7">
           {BISD.slice(Math.floor(BISD.length / 4) * 4).map((m) => (
             <CoordinatorCard key={m.name} member={m} />
           ))}
@@ -288,7 +288,8 @@ const CoordinatorPage2 = () => {
 
         <header className="text-center mt-24 mb-12">
           <h2 className="text-4xl md:text-5xl font-playfair text-gray-900">
-            Centre on Biodegradable, eco-friendly Plastics & Solid-Waste Management
+            Centre on Biodegradable, eco-friendly Plastics & Solid-Waste
+            Management
           </h2>
           {/* <p className="mt-2 text-base text-gray-600">Team Members</p> */}
           <div className="mt-4 h-1 w-24 bg-accent mx-auto rounded-full" />
